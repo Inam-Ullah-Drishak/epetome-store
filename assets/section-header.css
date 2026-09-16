@@ -185,6 +185,10 @@
   height: 100%;
 }
 
+.eh__cart[hidden] {
+  display: none;
+}
+
 /* The cart glyph only fills about half of its 40x40 viewBox, so enlarge its box
    to match the account icon, without making the clickable area wider */
 .eh__cart .eh__svg {
