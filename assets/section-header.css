@@ -78,7 +78,7 @@
 .eh__menu-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 2.4rem;
+  gap: 1.6rem;
   padding: 1rem 0;
   margin: 0;
   border: 0;
@@ -91,8 +91,8 @@
 
 .eh__menu-icon {
   display: inline-flex;
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
   align-items: center;
   justify-content: center;
 }
@@ -103,7 +103,7 @@
 
 .eh__icon-close {
   display: none;
-  height: 2.4rem;
+  height: 1.8rem;
 }
 
 .eh--open .eh__icon-open,
@@ -176,8 +176,8 @@
 
 .eh__svg {
   display: inline-flex;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .eh__svg svg {
@@ -192,9 +192,9 @@
 /* The cart glyph only fills about half of its 40x40 viewBox, so enlarge its box
    to match the account icon, without making the clickable area wider */
 .eh__cart .eh__svg {
-  width: 4.8rem;
-  height: 4.8rem;
-  margin: 0 -0.2rem;
+  width: 3.7rem;
+  height: 3.7rem;
+  margin: 0 -0.4rem;
 }
 
 .eh__cart .cart-count-bubble {
