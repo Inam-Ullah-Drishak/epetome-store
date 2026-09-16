@@ -38,8 +38,8 @@
     "header": {
       "type": "header",
       "settings": {
-        "logo_transparent": "shopify://shop_images/ShopNest_Logo.png",
-        "logo_solid": "shopify://shop_images/ShopNest_Logo.png",
+        "logo_transparent": "shopify://shop_images/logo_white.svg",
+        "logo_solid": "shopify://shop_images/logo_green.svg",
         "logo_width": 160,
         "logo_width_mobile": 100,
         "transparent_mode": "home",
