@@ -1,0 +1,40 @@
+/* Video fills the banner the same way an image does */
+.video-banner .banner__media.media > video {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Desktop / mobile video switching */
+.video-banner .banner__media.media > video.video-banner__video--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .video-banner .banner__media.media > video.video-banner__video--desktop {
+    display: none;
+  }
+
+  .video-banner .banner__media.media > video.video-banner__video--mobile {
+    display: block;
+  }
+}
+
+/* Full screen height */
+@media screen and (min-width: 750px) {
+  .video-banner.banner--full {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .video-banner.banner--full:not(.banner--mobile-bottom) .banner__content {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .video-banner.banner--full.banner--mobile-bottom .banner__media {
+    height: 70vh;
+    height: 70svh;
+  }
+}
