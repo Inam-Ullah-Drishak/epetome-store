@@ -1,1 +1,81 @@
-{"name":"t:sections.header.name","type":"header","sections":{"announcement-bar":{"type":"announcement-bar","blocks":{"announcement-bar-0":{"type":"announcement","settings":{"text":"Welcome to our store","link":""}}},"block_order":["announcement-bar-0"],"settings":{"auto_rotate":false,"change_slides_speed":5,"color_scheme":"scheme-1","show_line_separator":true,"show_social":false,"enable_country_selector":false,"enable_language_selector":false}},"header":{"type":"header","settings":{"transparent_mode":"home","sticky":true,"menu":"main-menu","menu_label":"menu","button_label":"Shop now"}}},"order":["announcement-bar","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "color_scheme": "scheme-1",
+        "show_line_separator": true,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_transparent": "shopify://shop_images/ShopNest_Logo.png",
+        "logo_solid": "shopify://shop_images/ShopNest_Logo.png",
+        "logo_width": 160,
+        "logo_width_mobile": 100,
+        "transparent_mode": "home",
+        "sticky": true,
+        "show_border": false,
+        "menu": "main-menu",
+        "menu_label": "menu",
+        "show_account": true,
+        "show_cart": false,
+        "button_label": "Shop now",
+        "button_link": "",
+        "transparent_button_filled": false,
+        "transparent_text": "#ffffff",
+        "solid_bg": "#ffffff",
+        "solid_text": "#193a24",
+        "solid_button_bg": "#193a24",
+        "solid_button_text": "#ffffff",
+        "popup_color_scheme": "",
+        "drawer_bg": "#ffffff",
+        "drawer_text": "#193a24",
+        "overlay_color": "#193a24",
+        "overlay_opacity": 45,
+        "drawer_button_label": "Manage subscription",
+        "drawer_button_link": "",
+        "show_promo": true,
+        "promo_subheading": "synbiotic dual cap.",
+        "promo_heading": "meet your new gut health routine.",
+        "promo_button_label": "Shop now",
+        "promo_button_link": "",
+        "promo_bg": "#f1f0ec",
+        "padding_y": 24
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}
