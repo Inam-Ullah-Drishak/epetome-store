@@ -150,18 +150,6 @@
             </div>
           {%- endif -%}
         </a>
-
-        {%- if section.settings.button_label != blank -%}
-          <a
-            href="{{ section.settings.button_link | default: routes.all_products_collection_url }}"
-            class="eh__button{% if section.settings.transparent_button_filled %} eh__button--filled-transparent{% endif %}"
-          >
-            {{ section.settings.button_label | escape }}
-            <svg class="eh__chevron" viewBox="0 0 8 14" fill="none" aria-hidden="true">
-              <path d="M1 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        {%- endif -%}
       </div>
     </header>
   </div>
@@ -437,23 +425,6 @@
       "default": false
     },
     {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button text",
-      "default": "Shop now"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "checkbox",
-      "id": "transparent_button_filled",
-      "label": "Show button background on transparent header",
-      "default": false
-    },
-    {
       "type": "header",
       "content": "Colors: transparent header"
     },
@@ -482,7 +453,7 @@
     {
       "type": "color",
       "id": "solid_button_bg",
-      "label": "Button background",
+      "label": "Button and cart count background",
       "default": "#193A24"
     },
     {
