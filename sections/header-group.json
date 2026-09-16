@@ -49,7 +49,7 @@
         "menu_label": "menu",
         "show_account": true,
         "show_cart": false,
-        "button_label": "Shop now",
+        "button_label": "",
         "button_link": "",
         "transparent_button_filled": false,
         "transparent_text": "#ffffff",
