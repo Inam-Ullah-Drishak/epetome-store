@@ -185,7 +185,7 @@
         "section_bg": "#fbfbf8",
         "card_bg": "#ffffff",
         "heading_color": "#193a24",
-        "text_color": "#121212",
+        "text_color": "#193a24",
         "inactive_color": "#c3c9c2",
         "button_color": "#193a24",
         "full_width": false,
@@ -237,7 +237,7 @@
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
         "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
         "padding_top": 40,
         "padding_bottom": 40
       }

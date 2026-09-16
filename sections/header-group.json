@@ -28,7 +28,7 @@
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-3",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
@@ -54,7 +54,7 @@
         "solid_text": "#193a24",
         "solid_button_bg": "#193a24",
         "solid_button_text": "#ffffff",
-        "popup_color_scheme": "",
+        "popup_color_scheme": "scheme-5",
         "drawer_bg": "#ffffff",
         "drawer_text": "#193a24",
         "overlay_color": "#193a24",
