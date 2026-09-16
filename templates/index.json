@@ -130,6 +130,70 @@
         "padding_bottom": 50
       }
     },
+    "product_spotlight": {
+      "type": "product-spotlight",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "title": "11 strains",
+            "text": "clinically trialled bacterial strains."
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "title": "50 billion CFU",
+            "text": "one of the highest available doses."
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "title": "Synbiotic dual cap technology",
+            "text": "23x higher absorption than non-encapsulated."
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "title": "1 a day",
+            "text": "Just once a day, every day."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
+      "settings": {
+        "product": "",
+        "title": "Synbiotic dual cap.",
+        "rating": "4.59",
+        "rating_link": "",
+        "button_label": "Shop now",
+        "button_link": "",
+        "image": "shopify://shop_images/01A_Alpha.png",
+        "image_width": 400,
+        "image_width_mobile": 250,
+        "autoplay": true,
+        "interval": 4,
+        "title_size": 26,
+        "feature_size": 26,
+        "section_bg": "#fbfbf8",
+        "card_bg": "#ffffff",
+        "heading_color": "#193a24",
+        "text_color": "#121212",
+        "inactive_color": "#c3c9c2",
+        "button_color": "#193a24",
+        "full_width": false,
+        "card_radius": 0,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -156,50 +220,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "product_spotlight": {
-      "type": "product-spotlight",
-      "blocks": {
-        "feature_1": {
-          "type": "feature",
-          "settings": {
-            "title": "11 strains",
-            "text": "clinically trialled bacterial strains."
-          }
-        },
-        "feature_2": {
-          "type": "feature",
-          "settings": {
-            "title": "50 billion CFU",
-            "text": ""
-          }
-        },
-        "feature_3": {
-          "type": "feature",
-          "settings": {
-            "title": "synbiotic dual cap technology",
-            "text": ""
-          }
-        },
-        "feature_4": {
-          "type": "feature",
-          "settings": {
-            "title": "1 a day",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "feature_1",
-        "feature_2",
-        "feature_3",
-        "feature_4"
-      ],
-      "settings": {
-        "title": "synbiotic dual cap.",
-        "rating": "4.59",
-        "button_label": "Shop now"
       }
     }
   },
