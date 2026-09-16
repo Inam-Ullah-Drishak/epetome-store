@@ -59,7 +59,7 @@
 
 .eh__right {
   justify-content: flex-end;
-  gap: 0.4rem;
+  gap: 0;
 }
 
 @media screen and (min-width: 990px) {
@@ -70,7 +70,7 @@
   }
 
   .eh__right {
-    gap: 0.8rem;
+    gap: 0.2rem;
   }
 }
 
@@ -169,7 +169,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 4.4rem;
+  min-width: 3.6rem;
   height: 4.4rem;
   color: inherit;
 }
