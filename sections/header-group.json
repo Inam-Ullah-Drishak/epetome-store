@@ -48,7 +48,7 @@
         "menu": "main-menu",
         "menu_label": "menu",
         "show_account": true,
-        "show_cart": false,
+        "show_cart": true,
         "transparent_text": "#ffffff",
         "solid_bg": "#ffffff",
         "solid_text": "#193a24",
