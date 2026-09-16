@@ -85,10 +85,55 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "press_marquee": {
+      "type": "press-marquee",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "heading": "",
+            "text": "<p>“Out of the non-fermented options, I've personally found Emily English’s Epetome to work wonders.”</p>",
+            "link": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "heading": "",
+            "text": "<p>“A good synbiotic that combines probiotics to feed the good bacteria in your gut and prebiotics to feed the probiotics can help a myriad of gut issues, including bloating. Recognised as one of the best bloating supplements to try in 2025.”</p>",
+            "link": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "heading": "",
+            "text": "<p>\"With 50 billion colony-forming units (CFU), it's one of the most potent supplements on the market.\"</p>",
+            "link": ""
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "heading": "",
+            "text": "<p>\"You might feel as if you stumbled upon a revolutionary hack or 'magic pill'.\"</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "video_banner_rhkUth",
+    "press_marquee",
     "featured_collection"
   ]
 }
