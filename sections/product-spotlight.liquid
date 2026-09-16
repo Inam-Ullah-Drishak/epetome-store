@@ -1,0 +1,474 @@
+{{ 'section-product-spotlight.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product = section.settings.product
+  assign title = section.settings.title
+  if title == blank and product != blank
+    assign title = product.title | escape
+  endif
+
+  assign button_link = section.settings.button_link
+  if button_link == blank and product != blank
+    assign button_link = product.url
+  endif
+
+  assign rating = section.settings.rating
+  if rating == blank and product.metafields.reviews.rating.value != blank
+    assign rating = product.metafields.reviews.rating.value.rating | round: 2
+  endif
+
+  assign main_image = section.settings.image
+  if main_image == blank and product != blank
+    assign main_image = product.featured_image
+  endif
+-%}
+
+{%- style -%}
+  #ProductSpotlight-{{ section.id }} {
+    --ps-section-bg: {{ section.settings.section_bg }};
+    --ps-card-bg: {{ section.settings.card_bg }};
+    --ps-card-radius: {{ section.settings.card_radius }}px;
+    --ps-heading-color: {{ section.settings.heading_color }};
+    --ps-text-color: {{ section.settings.text_color }};
+    --ps-inactive-color: {{ section.settings.inactive_color }};
+    --ps-button-color: {{ section.settings.button_color }};
+    --ps-title-size: {{ section.settings.title_size | times: 0.85 | round: 0 }}px;
+    --ps-feature-size: {{ section.settings.feature_size | times: 0.85 | round: 0 }}px;
+    --ps-image-width: {{ section.settings.image_width_mobile }}px;
+    --ps-padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    --ps-padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #ProductSpotlight-{{ section.id }} {
+      --ps-title-size: {{ section.settings.title_size }}px;
+      --ps-feature-size: {{ section.settings.feature_size }}px;
+      --ps-image-width: {{ section.settings.image_width }}px;
+      --ps-padding-top: {{ section.settings.padding_top }}px;
+      --ps-padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div id="ProductSpotlight-{{ section.id }}" class="product-spotlight">
+  <div class="product-spotlight__container{% unless section.settings.full_width %} page-width{% endunless %}">
+    <product-spotlight
+      class="product-spotlight__card"
+      data-autoplay="{{ section.settings.autoplay }}"
+      data-interval="{{ section.settings.interval | times: 1000 }}"
+    >
+      <div class="product-spotlight__info">
+        {%- if title != blank -%}
+          <h2 class="product-spotlight__title">{{ title }}</h2>
+        {%- endif -%}
+
+        {%- if rating != blank -%}
+          <div class="product-spotlight__rating">
+            <svg class="product-spotlight__star" viewBox="0 0 20 19" aria-hidden="true">
+              <path fill="currentColor" d="M10 0l2.36 6.9H19.6l-5.86 4.26 2.24 6.94L10 13.86 4.02 18.1l2.24-6.94L.4 6.9h7.24z"/>
+            </svg>
+            {%- if section.settings.rating_link != blank -%}
+              <a href="{{ section.settings.rating_link }}" class="product-spotlight__rating-value">{{ rating }}</a>
+            {%- else -%}
+              <span class="product-spotlight__rating-value">{{ rating }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a
+            {% if button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ button_link }}"
+            {% endif %}
+            class="product-spotlight__button"
+          >
+            {{- section.settings.button_label | escape -}}
+            <svg viewBox="0 0 8 14" fill="none" aria-hidden="true">
+              <path d="M1 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="product-spotlight__media">
+        {%- if main_image != blank -%}
+          {{
+            main_image
+            | image_url: width: 1400
+            | image_tag:
+              class: 'product-spotlight__image is-active',
+              data-image-default: '',
+              loading: 'lazy',
+              sizes: '(min-width: 750px) 500px, 80vw',
+              widths: '400, 600, 800, 1000, 1400'
+          }}
+        {%- else -%}
+          {{ 'product-apparel-1' | placeholder_svg_tag: 'product-spotlight__image product-spotlight__placeholder is-active' }}
+        {%- endif -%}
+
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image != blank -%}
+            {{
+              block.settings.image
+              | image_url: width: 1400
+              | image_tag:
+                class: 'product-spotlight__image',
+                data-image-for: block.id,
+                loading: 'lazy',
+                alt: '',
+                sizes: '(min-width: 750px) 500px, 80vw',
+                widths: '400, 600, 800, 1000, 1400'
+            }}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      <ul class="product-spotlight__features" role="list">
+        {%- for block in section.blocks -%}
+          <li
+            class="product-spotlight__feature{% if forloop.first %} is-active{% endif %}"
+            data-feature-id="{{ block.id }}"
+            {{ block.shopify_attributes }}
+          >
+            <button
+              type="button"
+              class="product-spotlight__feature-title"
+              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="Feature-{{ block.id }}"
+            >
+              {{- block.settings.title -}}
+            </button>
+            <div id="Feature-{{ block.id }}" class="product-spotlight__feature-body">
+              <div class="product-spotlight__feature-inner">
+                {%- if block.settings.text != blank -%}
+                  <p class="product-spotlight__feature-text">{{ block.settings.text }}</p>
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </product-spotlight>
+  </div>
+</div>
+
+{% javascript %}
+  if (!customElements.get('product-spotlight')) {
+    class ProductSpotlight extends HTMLElement {
+      connectedCallback() {
+        this.features = [...this.querySelectorAll('.product-spotlight__feature')];
+        this.images = [...this.querySelectorAll('.product-spotlight__image')];
+        if (!this.features.length) return;
+
+        this.interval = Number(this.dataset.interval) || 4000;
+        this.autoplay =
+          this.dataset.autoplay === 'true' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        this.index = 0;
+
+        this.features.forEach((feature, index) => {
+          const button = feature.querySelector('.product-spotlight__feature-title');
+          button.addEventListener('click', () => this.activate(index));
+          if (window.matchMedia('(hover: hover)').matches) {
+            button.addEventListener('mouseenter', () => this.activate(index));
+          }
+        });
+
+        this.addEventListener('mouseenter', () => this.stop());
+        this.addEventListener('mouseleave', () => this.start());
+        this.addEventListener('focusin', () => this.stop());
+        this.addEventListener('focusout', () => this.start());
+
+        this.onBlockSelect = (event) => {
+          const index = this.features.findIndex((feature) => feature.dataset.featureId === event.detail.blockId);
+          if (index === -1) return;
+          this.stop();
+          this.activate(index);
+        };
+        document.addEventListener('shopify:block:select', this.onBlockSelect);
+
+        this.start();
+      }
+
+      disconnectedCallback() {
+        this.stop();
+        document.removeEventListener('shopify:block:select', this.onBlockSelect);
+      }
+
+      start() {
+        if (!this.autoplay || this.features.length < 2) return;
+        this.stop();
+        this.timer = setInterval(() => this.activate((this.index + 1) % this.features.length), this.interval);
+      }
+
+      stop() {
+        clearInterval(this.timer);
+      }
+
+      activate(index) {
+        this.index = index;
+        const activeId = this.features[index].dataset.featureId;
+
+        this.features.forEach((feature, i) => {
+          const isActive = i === index;
+          feature.classList.toggle('is-active', isActive);
+          feature.querySelector('.product-spotlight__feature-title').setAttribute('aria-expanded', isActive);
+        });
+
+        // Show the feature's own image if it has one, otherwise the default image.
+        const hasOwnImage = this.images.some((image) => image.dataset.imageFor === activeId);
+        this.images.forEach((image) => {
+          const isActive = hasOwnImage ? image.dataset.imageFor === activeId : !image.dataset.imageFor;
+          image.classList.toggle('is-active', isActive);
+        });
+      }
+    }
+
+    customElements.define('product-spotlight', ProductSpotlight);
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Product spotlight",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product",
+      "info": "Optional. Fills in the title, image, button link and rating (from a reviews app) when those are left empty below."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "synbiotic dual cap."
+    },
+    {
+      "type": "text",
+      "id": "rating",
+      "label": "Rating",
+      "default": "4.59"
+    },
+    {
+      "type": "url",
+      "id": "rating_link",
+      "label": "Rating link",
+      "info": "For example a link to your reviews."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Transparent PNG works best."
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 150,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "label": "Image width (desktop)",
+      "default": 380
+    },
+    {
+      "type": "range",
+      "id": "image_width_mobile",
+      "min": 120,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Image width (mobile)",
+      "default": 260
+    },
+    {
+      "type": "header",
+      "content": "Features"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Automatically cycle features",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Time per feature",
+      "default": 4
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "feature_size",
+      "min": 14,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Feature title size",
+      "default": 26
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section background",
+      "default": "#FBFBF8"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Title and active feature",
+      "default": "#193A24"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "inactive_color",
+      "label": "Inactive features",
+      "default": "#C3C9C2"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button",
+      "default": "#193A24"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Card corner radius",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Description",
+          "info": "Shown when this feature is active."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Optional. Replaces the main image while this feature is active."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product spotlight",
+      "blocks": [
+        { "type": "feature", "settings": { "title": "11 strains", "text": "clinically trialled bacterial strains." } },
+        { "type": "feature", "settings": { "title": "50 billion CFU" } },
+        { "type": "feature", "settings": { "title": "synbiotic dual cap technology" } },
+        { "type": "feature", "settings": { "title": "1 a day" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
