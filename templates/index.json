@@ -58,6 +58,78 @@
         "show_text_below": false
       }
     },
+    "press_marquee": {
+      "type": "press-marquee",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/ELLE_Magazine_Logo.svg",
+            "heading": "",
+            "text": "<p>“Out of the non-fermented options, I've personally found Emily English’s Epetome to work wonders.”</p>",
+            "link": ""
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/British_Vogue_logo.png",
+            "heading": "",
+            "text": "<p>“A good synbiotic that combines probiotics to feed the good bacteria in your gut and prebiotics to feed the probiotics can help a myriad of gut issues, including bloating. Recognised as one of the best bloating supplements to try in 2025.”</p>",
+            "link": ""
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/the-independent-seeklogo_b197b6a7-33f4-403e-a375-a9ccab1597f3.svg",
+            "heading": "",
+            "text": "<p>\"With 50 billion colony-forming units (CFU), it's one of the most potent supplements on the market.\"</p>",
+            "link": ""
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "logo": "shopify://shop_images/Womenshealthlogo_04614454-ca95-470a-bfe1-d587166ee013.svg",
+            "heading": "",
+            "text": "<p>\"You might feel as if you stumbled upon a revolutionary hack or 'magic pill'.\"</p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "separator_image": "shopify://shop_images/Pill_Blank.png",
+        "separator_height": 130,
+        "separator_height_mobile": 90,
+        "item_width": 250,
+        "item_width_mobile": 200,
+        "item_gap": 50,
+        "item_gap_mobile": 30,
+        "logo_height": 40,
+        "logo_height_mobile": 40,
+        "content_spacing": 14,
+        "text_alignment": "center",
+        "vertical_alignment": "center",
+        "heading_size": 20,
+        "heading_weight": "600",
+        "text_size": 16,
+        "background_color": "#fbfbf8",
+        "heading_color": "#193a24",
+        "text_color": "#4a4a4a",
+        "speed": 40,
+        "direction": "left",
+        "pause_on_hover": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -85,50 +157,6 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
-    },
-    "press_marquee": {
-      "type": "press-marquee",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "heading": "",
-            "text": "<p>“Out of the non-fermented options, I've personally found Emily English’s Epetome to work wonders.”</p>",
-            "link": ""
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "heading": "",
-            "text": "<p>“A good synbiotic that combines probiotics to feed the good bacteria in your gut and prebiotics to feed the probiotics can help a myriad of gut issues, including bloating. Recognised as one of the best bloating supplements to try in 2025.”</p>",
-            "link": ""
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "heading": "",
-            "text": "<p>\"With 50 billion colony-forming units (CFU), it's one of the most potent supplements on the market.\"</p>",
-            "link": ""
-          }
-        },
-        "item_4": {
-          "type": "item",
-          "settings": {
-            "heading": "",
-            "text": "<p>\"You might feel as if you stumbled upon a revolutionary hack or 'magic pill'.\"</p>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3",
-        "item_4"
-      ],
-      "settings": {}
     }
   },
   "order": [
