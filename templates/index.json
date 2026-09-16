@@ -229,7 +229,7 @@
       "settings": {
         "image": "shopify://shop_images/5f772c0df662cd3f241328d89bd7ee6a.jpg",
         "height": "small",
-        "desktop_image_width": "large",
+        "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
