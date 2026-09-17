@@ -351,6 +351,61 @@
         "content_max_width_mobile": 80,
         "show_text_below": false
       }
+    },
+    "tech_showcase": {
+      "type": "tech-showcase",
+      "blocks": {
+        "word_inner": {
+          "type": "word",
+          "settings": {
+            "text": "inner",
+            "position_x": 58,
+            "position_y": 20,
+            "layer": "front"
+          }
+        },
+        "word_outer": {
+          "type": "word",
+          "settings": {
+            "text": "outer",
+            "position_x": 40,
+            "position_y": 80,
+            "layer": "behind"
+          }
+        },
+        "hotspot_inner": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 43,
+            "position_y": 40,
+            "title": "inner capsule",
+            "text": ""
+          }
+        },
+        "hotspot_outer": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 64,
+            "position_y": 80,
+            "title": "outer capsule",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "word_inner",
+        "word_outer",
+        "hotspot_inner",
+        "hotspot_outer"
+      ],
+      "settings": {
+        "heading": "optimised by technology.",
+        "heading_size": "h1",
+        "text": "<p>Epetōme's <strong>synbiotic dual cap.</strong> is the meeting point of science and simplicity. 23x higher absorption than non-encapsulated, its unique capsule-in-capsule design ensures targeted delivery of ingredients within the gut, where the microbiome thrives.</p>",
+        "button_label": "Learn how",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1"
+      }
     }
   },
   "order": [
@@ -359,6 +414,7 @@
     "product_spotlight",
     "image_with_text_Nm6KbC",
     "image_banner_rhMiqG",
-    "image_banner_UacLXQ"
+    "image_banner_UacLXQ",
+    "tech_showcase"
   ]
 }

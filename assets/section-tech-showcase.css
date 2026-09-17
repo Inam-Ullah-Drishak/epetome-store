@@ -1,0 +1,211 @@
+.tech-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Heading and text */
+.tech-showcase__header {
+  max-width: 56rem;
+}
+
+.tech-showcase__heading {
+  margin: 0;
+}
+
+.tech-showcase__text {
+  margin-top: 2rem;
+}
+
+.tech-showcase__text > * {
+  margin: 0;
+}
+
+/* Stage: circles, words, image and hotspots share one square area */
+.tech-showcase__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, calc(var(--ts-image-width) * 1.3));
+  aspect-ratio: 1;
+  margin-top: 3.2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .tech-showcase__stage {
+    margin-top: 4rem;
+  }
+}
+
+.tech-showcase__circles,
+.tech-showcase__circles span {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.tech-showcase__circles span {
+  margin: auto;
+  border: 0.1rem solid rgba(var(--color-foreground), var(--ts-circle-opacity));
+  border-radius: 50%;
+}
+
+.tech-showcase__circles span:nth-child(1) {
+  width: 100%;
+  height: 100%;
+}
+
+.tech-showcase__circles span:nth-child(2) {
+  width: 78%;
+  height: 78%;
+}
+
+.tech-showcase__circles span:nth-child(3) {
+  width: 55%;
+  height: 55%;
+  border-color: rgba(var(--color-foreground), calc(var(--ts-circle-opacity) * 2));
+}
+
+/* Large words */
+.tech-showcase__word {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  color: rgb(var(--color-button));
+  font-family: var(--font-body-family);
+  font-size: var(--ts-word-size);
+  font-weight: var(--font-body-weight);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Image */
+.tech-showcase__image {
+  position: relative;
+  width: var(--ts-image-width);
+  max-width: 100%;
+}
+
+.tech-showcase__image img,
+.tech-showcase__image svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tech-showcase__image--float {
+  animation: tech-showcase-float 6s ease-in-out infinite;
+}
+
+@keyframes tech-showcase-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.2rem);
+  }
+}
+
+/* Hotspots */
+.tech-showcase__hotspot {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.tech-showcase__dot {
+  position: relative;
+  display: block;
+  width: 2.8rem;
+  height: 2.8rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.tech-showcase__dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: tech-showcase-pulse 2.4s ease-out infinite;
+}
+
+@keyframes tech-showcase-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.tech-showcase__tooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1.2rem);
+  width: max-content;
+  max-width: 22rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--buttons-radius, 10px);
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%);
+  transition: opacity var(--duration-short) ease, visibility var(--duration-short) ease;
+}
+
+.tech-showcase__hotspot--left .tech-showcase__tooltip {
+  right: calc(100% + 1.2rem);
+  left: auto;
+}
+
+.tech-showcase__hotspot:hover .tech-showcase__tooltip,
+.tech-showcase__hotspot:focus-within .tech-showcase__tooltip,
+.tech-showcase__hotspot.is-open .tech-showcase__tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tech-showcase__tooltip-title {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tech-showcase__tooltip-text {
+  margin: 0.4rem 0 0;
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+/* Button */
+.tech-showcase__buttons {
+  margin-top: 3.2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .tech-showcase__buttons {
+    margin-top: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-showcase__image--float,
+  .tech-showcase__dot::after {
+    animation: none;
+  }
+}

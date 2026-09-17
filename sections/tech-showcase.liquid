@@ -1,0 +1,421 @@
+{{ 'section-tech-showcase.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #TechShowcase-{{ section.id }} {
+    --ts-image-width: {{ section.settings.image_width_mobile }}px;
+    --ts-word-size: {{ section.settings.word_size_mobile }}px;
+    --ts-circle-opacity: {{ section.settings.circle_opacity | divided_by: 100.0 }};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #TechShowcase-{{ section.id }} {
+      --ts-image-width: {{ section.settings.image_width }}px;
+      --ts-word-size: {{ section.settings.word_size }}px;
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div
+    id="TechShowcase-{{ section.id }}"
+    class="tech-showcase page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    {%- if section.settings.heading != blank or section.settings.text != blank -%}
+      <div class="tech-showcase__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="tech-showcase__heading inline-richtext {{ section.settings.heading_size }}">
+            {{- section.settings.heading -}}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="tech-showcase__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="tech-showcase__stage">
+      {%- if section.settings.show_circles -%}
+        <div class="tech-showcase__circles" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'word' and block.settings.layer == 'behind' -%}
+          <span
+            class="tech-showcase__word"
+            style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;"
+            aria-hidden="true"
+            {{ block.shopify_attributes }}
+          >
+            {{- block.settings.text | escape -}}
+          </span>
+        {%- endif -%}
+      {%- endfor -%}
+
+      <div class="tech-showcase__image{% if section.settings.animate_image %} tech-showcase__image--float{% endif %}">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1600
+            | image_tag:
+              loading: 'lazy',
+              sizes: '(min-width: 750px) 500px, 80vw',
+              widths: '400, 600, 800, 1000, 1200, 1600'
+          }}
+        {%- else -%}
+          {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'word' -%}
+            {%- if block.settings.layer == 'front' -%}
+              <span
+                class="tech-showcase__word"
+                style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;"
+                aria-hidden="true"
+                {{ block.shopify_attributes }}
+              >
+                {{- block.settings.text | escape -}}
+              </span>
+            {%- endif -%}
+          {%- when 'hotspot' -%}
+            <div
+              class="tech-showcase__hotspot{% if block.settings.position_x > 60 %} tech-showcase__hotspot--left{% endif %}"
+              style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;"
+              {{ block.shopify_attributes }}
+            >
+              <button
+                type="button"
+                class="tech-showcase__dot"
+                aria-expanded="false"
+                aria-controls="Hotspot-{{ block.id }}"
+                aria-label="{{ block.settings.title | escape }}"
+              ></button>
+              {%- if block.settings.title != blank or block.settings.text != blank -%}
+                <div id="Hotspot-{{ block.id }}" class="tech-showcase__tooltip color-{{ section.settings.tooltip_color_scheme }}">
+                  {%- if block.settings.title != blank -%}
+                    <p class="tech-showcase__tooltip-title">{{ block.settings.title | escape }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <p class="tech-showcase__tooltip-text">{{ block.settings.text }}</p>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="tech-showcase__buttons">
+        <a
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+          class="button{% if section.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% javascript %}
+  if (!window.techShowcaseHotspots) {
+    window.techShowcaseHotspots = true;
+
+    // Toggle hotspot tooltips on tap/click; hover and focus are handled in CSS.
+    document.addEventListener('click', (event) => {
+      const dot = event.target.closest('.tech-showcase__dot');
+      document.querySelectorAll('.tech-showcase__hotspot.is-open').forEach((hotspot) => {
+        if (dot && hotspot.contains(dot)) return;
+        hotspot.classList.remove('is-open');
+        hotspot.querySelector('.tech-showcase__dot').setAttribute('aria-expanded', 'false');
+      });
+      if (!dot) return;
+      const hotspot = dot.closest('.tech-showcase__hotspot');
+      const isOpen = hotspot.classList.toggle('is-open');
+      dot.setAttribute('aria-expanded', isOpen);
+    });
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Technology showcase",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "optimised by technology."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Epetōme's <strong>synbiotic dual cap.</strong> is the meeting point of science and simplicity. 23x higher absorption than non-encapsulated, its unique capsule-in-capsule design ensures targeted delivery of ingredients within the gut, where the microbiome thrives.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Transparent PNG works best."
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Image width (desktop)",
+      "default": 420
+    },
+    {
+      "type": "range",
+      "id": "image_width_mobile",
+      "min": 150,
+      "max": 500,
+      "step": 10,
+      "unit": "px",
+      "label": "Image width (mobile)",
+      "default": 260
+    },
+    {
+      "type": "checkbox",
+      "id": "animate_image",
+      "label": "Gently float image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_circles",
+      "label": "Show circles behind image",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "circle_opacity",
+      "min": 5,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Circle opacity",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Large words"
+    },
+    {
+      "type": "range",
+      "id": "word_size",
+      "min": 30,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Word size (desktop)",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "word_size_mobile",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Word size (mobile)",
+      "default": 56
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Learn how"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary",
+      "label": "Use outline button style",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "tooltip_color_scheme",
+      "label": "Hotspot tooltip color scheme",
+      "default": "scheme-5"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "word",
+      "name": "Large word",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "inner"
+        },
+        {
+          "type": "range",
+          "id": "position_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal position",
+          "default": 60
+        },
+        {
+          "type": "range",
+          "id": "position_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical position",
+          "default": 20
+        },
+        {
+          "type": "select",
+          "id": "layer",
+          "label": "Layer",
+          "options": [
+            { "value": "front", "label": "In front of image" },
+            { "value": "behind", "label": "Behind image" }
+          ],
+          "default": "front"
+        }
+      ]
+    },
+    {
+      "type": "hotspot",
+      "name": "Hotspot",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "range",
+          "id": "position_x",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Horizontal position",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "position_y",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Vertical position",
+          "default": 50
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Hotspot"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "info": "Shown when the dot is hovered or tapped."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Technology showcase",
+      "blocks": [
+        { "type": "word", "settings": { "text": "inner", "position_x": 58, "position_y": 20, "layer": "front" } },
+        { "type": "word", "settings": { "text": "outer", "position_x": 40, "position_y": 80, "layer": "behind" } },
+        { "type": "hotspot", "settings": { "position_x": 43, "position_y": 40, "title": "inner capsule" } },
+        { "type": "hotspot", "settings": { "position_x": 64, "position_y": 80, "title": "outer capsule" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
