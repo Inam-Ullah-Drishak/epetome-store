@@ -278,6 +278,9 @@
         "text_VkYcaW",
         "buttons_9MDNFy"
       ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {#Banner-template--28188019228970__image_banner_rhMiqG .banner__buttons {margin-top: 30rem; }}"
+      ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Shot_2.jpg",
@@ -328,6 +331,9 @@
         "heading_GaP3B7",
         "text_yGAnwC",
         "buttons_tpzccM"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {#Banner-template--28188019228970__image_banner_UacLXQ .banner__buttons {margin-top: 30rem; }}"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
