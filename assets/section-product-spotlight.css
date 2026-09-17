@@ -75,9 +75,8 @@ a.product-spotlight__rating-value {
 .product-spotlight__button {
   display: inline-flex;
   align-items: center;
-  gap: 3.2rem;
   margin-top: 1.6rem;
-  padding: 1.1rem 1.6rem 1.1rem 1.8rem;
+  padding: 1.1rem 2.4rem;
   border: 0.1rem solid var(--ps-button-color);
   border-radius: var(--buttons-radius, 10px);
   color: var(--ps-button-color);
@@ -88,10 +87,6 @@ a.product-spotlight__rating-value {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.product-spotlight__button svg {
-  width: 0.7rem;
-  height: 1.2rem;
-}
 
 .product-spotlight__button:hover {
   background-color: var(--ps-button-color);

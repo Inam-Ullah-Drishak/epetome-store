@@ -247,11 +247,6 @@ shopify-account.eh__icon {
   opacity: 0.88;
 }
 
-.eh__chevron {
-  width: 0.8rem;
-  height: 1.4rem;
-  flex-shrink: 0;
-}
 
 /* Drawer */
 .eh-drawer,
@@ -345,15 +340,10 @@ shopify-account.eh__icon {
 
 .eh-promo .eh__button {
   margin-top: auto;
-  padding: 1.2rem 1.4rem;
-  gap: 2rem;
+  padding: 1.2rem 2rem;
   font-size: 1.2rem;
 }
 
-.eh-promo .eh__chevron {
-  width: 0.6rem;
-  height: 1rem;
-}
 
 .eh-promo__image {
   position: absolute;
