@@ -9,10 +9,12 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/logo_green.svg",
     "logo_width": 90,
-    "type_header_font": "poppins_n6",
+    "favicon": "shopify://shop_images/Pill_Blank.png",
+    "type_header_font": "figtree_n6",
     "heading_scale": 100,
-    "type_body_font": "poppins_n4",
+    "type_body_font": "figtree_n5",
     "body_scale": 100,
     "page_width": 1200,
     "spacing_sections": 0,
