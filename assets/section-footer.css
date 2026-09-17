@@ -88,7 +88,7 @@
 
 .footer__newsletter-text {
   margin-bottom: 3.2rem;
-  font-size: 1.6rem;
+  font-size: inherit;
   line-height: 1.4;
 }
 
@@ -100,21 +100,21 @@
   display: flex;
   align-items: stretch;
   max-width: 30rem;
-  min-height: 6.2rem;
+  min-height: var(--button-min-height, 4.8rem);
 }
 
 .footer__newsletter-input {
   flex: 1 1 auto;
   min-width: 0;
-  padding: 0 2rem 0 3rem;
+  padding: 0 1.6rem 0 2rem;
   border: 0.1rem solid rgb(var(--color-foreground));
   border-right: 0;
   border-radius: var(--buttons-radius, 10px) 0 0 var(--buttons-radius, 10px);
   background: transparent;
   color: rgb(var(--color-foreground));
   font-family: inherit;
-  font-size: 1.8rem;
-  letter-spacing: 0.04em;
+  font-size: inherit;
+  letter-spacing: inherit;
 }
 
 .footer__newsletter-input::placeholder {
@@ -134,7 +134,7 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 6.2rem;
+  width: var(--button-min-height, 4.8rem);
   border: 0.1rem solid rgb(var(--color-button));
   border-radius: 0 var(--buttons-radius, 10px) var(--buttons-radius, 10px) 0;
   background-color: rgb(var(--color-button));
@@ -156,7 +156,7 @@
 .footer__newsletter-message {
   display: block;
   margin-top: 1rem;
-  font-size: 1.4rem;
+  font-size: inherit;
 }
 
 .footer__follow-on-shop {
@@ -192,7 +192,7 @@
 .footer__link,
 .footer__column-text {
   color: inherit;
-  font-size: 1.8rem;
+  font-size: inherit;
   line-height: 1.4;
   text-decoration: none;
 }
@@ -260,11 +260,6 @@
   .footer__column-heading,
   .footer__newsletter-heading {
     font-size: 1.8rem;
-  }
-
-  .footer__link,
-  .footer__column-text {
-    font-size: 1.6rem;
   }
 
   .footer__policies {
