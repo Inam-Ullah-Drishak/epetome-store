@@ -410,6 +410,8 @@
         "image_rotation": -35,
         "animate_image": true,
         "show_circles": true,
+        "ring_size": 195,
+        "ring_size_mobile": 145,
         "circle_opacity": 30,
         "word_size": 30,
         "word_size_mobile": 30,

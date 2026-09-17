@@ -2,8 +2,9 @@
 
 {%- style -%}
   #TechShowcase-{{ section.id }} {
-    --ts-image-width: {{ section.settings.image_width_mobile }}px;
-    --ts-word-size: {{ section.settings.word_size_mobile }}px;
+    --ts-image-width: {{ section.settings.image_width_mobile | default: 110 }}px;
+    --ts-ring-size: {{ section.settings.ring_size_mobile | default: 145 }}px;
+    --ts-word-size: {{ section.settings.word_size_mobile | default: 56 }}px;
     --ts-circle-opacity: {{ section.settings.circle_opacity | divided_by: 100.0 }};
     --ts-image-rotation: {{ section.settings.image_rotation }}deg;
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -12,8 +13,9 @@
 
   @media screen and (min-width: 750px) {
     #TechShowcase-{{ section.id }} {
-      --ts-image-width: {{ section.settings.image_width }}px;
-      --ts-word-size: {{ section.settings.word_size }}px;
+      --ts-image-width: {{ section.settings.image_width | default: 150 }}px;
+      --ts-ring-size: {{ section.settings.ring_size | default: 195 }}px;
+      --ts-word-size: {{ section.settings.word_size | default: 90 }}px;
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
@@ -51,7 +53,7 @@
         {%- if block.type == 'word' and block.settings.layer == 'behind' -%}
           <span
             class="tech-showcase__word"
-            style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;{% if block.settings.font_size > 0 %} --ts-word-size: {{ block.settings.font_size }}px;{% endif %}"
+            style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;{% assign word_font_size = block.settings.font_size | default: 0 %}{% if word_font_size > 0 %} --ts-word-size: {{ word_font_size }}px;{% endif %}"
             aria-hidden="true"
             {{ block.shopify_attributes }}
           >
@@ -81,7 +83,7 @@
             {%- if block.settings.layer == 'front' -%}
               <span
                 class="tech-showcase__word"
-                style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;{% if block.settings.font_size > 0 %} --ts-word-size: {{ block.settings.font_size }}px;{% endif %}"
+                style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;{% assign word_font_size = block.settings.font_size | default: 0 %}{% if word_font_size > 0 %} --ts-word-size: {{ word_font_size }}px;{% endif %}"
                 aria-hidden="true"
                 {{ block.shopify_attributes }}
               >
@@ -196,23 +198,17 @@
       "info": "Transparent PNG works best."
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "image_width",
-      "min": 100,
-      "max": 200,
-      "step": 5,
-      "unit": "px",
       "label": "Image width (desktop)",
+      "info": "In pixels.",
       "default": 150
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "image_width_mobile",
-      "min": 80,
-      "max": 200,
-      "step": 5,
-      "unit": "px",
       "label": "Image width (mobile)",
+      "info": "In pixels.",
       "default": 110
     },
     {
@@ -238,6 +234,20 @@
       "default": true
     },
     {
+      "type": "number",
+      "id": "ring_size",
+      "label": "Circle size (desktop)",
+      "info": "In pixels.",
+      "default": 195
+    },
+    {
+      "type": "number",
+      "id": "ring_size_mobile",
+      "label": "Circle size (mobile)",
+      "info": "In pixels.",
+      "default": 145
+    },
+    {
       "type": "range",
       "id": "circle_opacity",
       "min": 5,
@@ -252,23 +262,17 @@
       "content": "Large words"
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "word_size",
-      "min": 30,
-      "max": 200,
-      "step": 2,
-      "unit": "px",
       "label": "Word size (desktop)",
+      "info": "In pixels.",
       "default": 90
     },
     {
-      "type": "range",
+      "type": "number",
       "id": "word_size_mobile",
-      "min": 20,
-      "max": 120,
-      "step": 2,
-      "unit": "px",
       "label": "Word size (mobile)",
+      "info": "In pixels.",
       "default": 56
     },
     {
@@ -346,14 +350,10 @@
           "default": "inner"
         },
         {
-          "type": "range",
+          "type": "number",
           "id": "font_size",
-          "min": 0,
-          "max": 200,
-          "step": 2,
-          "unit": "px",
           "label": "Font size",
-          "info": "0 uses the section-wide word size.",
+          "info": "In pixels. 0 or blank uses the section-wide word size.",
           "default": 50
         },
         {
