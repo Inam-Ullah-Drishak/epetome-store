@@ -11,7 +11,7 @@
     'brand'
     'columns'
     'bottom';
-  row-gap: 4rem;
+  row-gap: 2rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -21,8 +21,7 @@
       'logo logo'
       'brand columns'
       '. bottom';
-    column-gap: 6rem;
-    row-gap: 4.8rem;
+    gap: 2rem;
   }
 }
 
@@ -32,7 +31,6 @@
 
 .footer__brand {
   grid-area: brand;
-  max-width: 34rem;
 }
 
 .footer__columns {
@@ -169,7 +167,7 @@
 .footer__columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 3.2rem 2rem;
+  gap: 2rem;
 }
 
 @media screen and (min-width: 750px) {
