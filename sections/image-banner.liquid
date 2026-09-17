@@ -27,6 +27,27 @@
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
+
+  @media screen and (max-width: 749px) {
+    #Banner-{{ section.id }} .banner__box {
+      max-width: {{ section.settings.content_max_width_mobile }}%;
+    }
+
+    #Banner-{{ section.id }}.banner--content-align-mobile-left .banner__box {
+      margin-right: auto;
+    }
+
+    #Banner-{{ section.id }}.banner--content-align-mobile-right .banner__box {
+      margin-left: auto;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    #Banner-{{ section.id }} .banner__box {
+      max-width: {{ section.settings.content_max_width }}px;
+      min-width: min(45rem, {{ section.settings.content_max_width }}px);
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -312,6 +333,16 @@
       "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
     },
     {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 300,
+      "max": 1400,
+      "step": 10,
+      "unit": "px",
+      "label": "Content max width (desktop)",
+      "default": 710
+    },
+    {
       "type": "checkbox",
       "id": "show_text_box",
       "default": true,
@@ -352,6 +383,16 @@
       ],
       "default": "center",
       "label": "t:sections.image-banner.settings.mobile_content_alignment.label"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width_mobile",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Content max width (mobile)",
+      "default": 100
     },
     {
       "type": "checkbox",
