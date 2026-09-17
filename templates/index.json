@@ -320,7 +320,7 @@
           "settings": {
             "button_label_1": "START YOUR JOURNEY",
             "button_link_1": "#",
-            "button_style_secondary_1": true,
+            "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -338,7 +338,7 @@
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/8aaa1041d05d7ae8aca7b24bef448894.jpg",
-        "image_overlay_opacity": 30,
+        "image_overlay_opacity": 20,
         "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "bottom-left",
