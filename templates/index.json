@@ -414,8 +414,12 @@
         "word_size": 90,
         "word_size_mobile": 50,
         "button_label": "Learn how",
+        "button_link": "#",
         "button_style_secondary": true,
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "tooltip_color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
