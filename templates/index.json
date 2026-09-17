@@ -292,7 +292,58 @@
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "center",
         "content_max_width_mobile": 100,
-        "show_text_below": false
+        "show_text_below": true
+      }
+    },
+    "image_banner_UacLXQ": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_GaP3B7": {
+          "type": "heading",
+          "settings": {
+            "heading": "curated forconvenience.",
+            "heading_size": "h1"
+          }
+        },
+        "text_yGAnwC": {
+          "type": "text",
+          "settings": {
+            "text": "Just once a day, every day - no gimmicks,no refrigeration, no blending. Just take asyou hydrate first thing in the morning.",
+            "text_style": "body"
+          }
+        },
+        "buttons_tpzccM": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "START YOUR JOURNEY",
+            "button_link_1": "#",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GaP3B7",
+        "text_yGAnwC",
+        "buttons_tpzccM"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/8aaa1041d05d7ae8aca7b24bef448894.jpg",
+        "image_overlay_opacity": 30,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "content_max_width": 400,
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "center",
+        "content_max_width_mobile": 100,
+        "show_text_below": true
       }
     }
   },
@@ -301,6 +352,7 @@
     "press_marquee",
     "product_spotlight",
     "image_with_text_Nm6KbC",
-    "image_banner_rhMiqG"
+    "image_banner_rhMiqG",
+    "image_banner_UacLXQ"
   ]
 }
