@@ -4,19 +4,60 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "link_list_shop": {
+          "type": "link_list",
+          "settings": {
+            "heading": "shop.",
+            "menu": "footer"
+          }
+        },
+        "link_list_learn": {
+          "type": "link_list",
+          "settings": {
+            "heading": "learn.",
+            "menu": "footer"
+          }
+        },
+        "link_list_support": {
+          "type": "link_list",
+          "settings": {
+            "heading": "support.",
+            "menu": "footer"
+          }
+        },
+        "link_list_extras": {
+          "type": "link_list",
+          "settings": {
+            "heading": "extras.",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_shop",
+        "link_list_learn",
+        "link_list_support",
+        "link_list_extras"
+      ],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
+        "logo_width": 220,
+        "logo_width_mobile": 160,
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
+        "newsletter_heading": "learn more about your gut.",
+        "newsletter_text": "<p>Sign up to our newsletter to be first to receive new gut health recipes, industry news and insights.</p>",
+        "newsletter_placeholder": "Enter email",
         "show_social": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "payment_enable": true,
+        "enable_follow_on_shop": false,
         "show_policy": true,
+        "show_copyright": false,
+        "payment_enable": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 100,
+        "padding_bottom": 100
       }
     }
   },
