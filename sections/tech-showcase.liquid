@@ -5,6 +5,7 @@
     --ts-image-width: {{ section.settings.image_width_mobile }}px;
     --ts-word-size: {{ section.settings.word_size_mobile }}px;
     --ts-circle-opacity: {{ section.settings.circle_opacity | divided_by: 100.0 }};
+    --ts-image-rotation: {{ section.settings.image_rotation }}deg;
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -50,7 +51,7 @@
         {%- if block.type == 'word' and block.settings.layer == 'behind' -%}
           <span
             class="tech-showcase__word"
-            style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;"
+            style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;{% if block.settings.font_size > 0 %} --ts-word-size: {{ block.settings.font_size }}px;{% endif %}"
             aria-hidden="true"
             {{ block.shopify_attributes }}
           >
@@ -80,7 +81,7 @@
             {%- if block.settings.layer == 'front' -%}
               <span
                 class="tech-showcase__word"
-                style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;"
+                style="--x: {{ block.settings.position_x }}%; --y: {{ block.settings.position_y }}%;{% if block.settings.font_size > 0 %} --ts-word-size: {{ block.settings.font_size }}px;{% endif %}"
                 aria-hidden="true"
                 {{ block.shopify_attributes }}
               >
@@ -215,6 +216,16 @@
       "default": 260
     },
     {
+      "type": "range",
+      "id": "image_rotation",
+      "min": -45,
+      "max": 45,
+      "step": 5,
+      "unit": "deg",
+      "label": "Image rotation",
+      "default": -25
+    },
+    {
       "type": "checkbox",
       "id": "animate_image",
       "label": "Gently float image",
@@ -336,6 +347,17 @@
         },
         {
           "type": "range",
+          "id": "font_size",
+          "min": 0,
+          "max": 200,
+          "step": 2,
+          "unit": "px",
+          "label": "Font size",
+          "info": "0 uses the section-wide word size.",
+          "default": 50
+        },
+        {
+          "type": "range",
           "id": "position_x",
           "min": 0,
           "max": 100,
@@ -410,8 +432,8 @@
     {
       "name": "Technology showcase",
       "blocks": [
-        { "type": "word", "settings": { "text": "inner", "position_x": 58, "position_y": 20, "layer": "front" } },
-        { "type": "word", "settings": { "text": "outer", "position_x": 40, "position_y": 80, "layer": "behind" } },
+        { "type": "word", "settings": { "text": "inner", "font_size": 50, "position_x": 80, "position_y": 20, "layer": "front" } },
+        { "type": "word", "settings": { "text": "outer", "font_size": 50, "position_x": 20, "position_y": 80, "layer": "behind" } },
         { "type": "hotspot", "settings": { "position_x": 43, "position_y": 40, "title": "inner capsule" } },
         { "type": "hotspot", "settings": { "position_x": 64, "position_y": 80, "title": "outer capsule" } }
       ]

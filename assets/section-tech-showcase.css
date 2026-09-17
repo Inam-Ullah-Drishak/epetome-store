@@ -88,6 +88,7 @@
   position: relative;
   width: var(--ts-image-width);
   max-width: 100%;
+  rotate: var(--ts-image-rotation, 0deg);
 }
 
 .tech-showcase__image img,
