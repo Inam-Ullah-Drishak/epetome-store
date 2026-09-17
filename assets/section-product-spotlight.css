@@ -75,14 +75,19 @@ a.product-spotlight__rating-value {
 .product-spotlight__button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-height: var(--button-min-height);
+  padding: 0 var(--button-padding-x);
+  font-family: inherit;
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  line-height: var(--button-line-height);
+  text-transform: var(--button-text-transform);
   margin-top: 1.6rem;
-  padding: 1.1rem 2.4rem;
   border: 0.1rem solid var(--ps-button-color);
   border-radius: var(--buttons-radius, 10px);
   color: var(--ps-button-color);
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }

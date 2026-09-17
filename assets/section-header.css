@@ -227,18 +227,19 @@ shopify-account.eh__icon {
 .eh__button {
   display: inline-flex;
   align-items: center;
-  gap: 1.4rem;
-  padding: 1.5rem 3rem;
   border: 0.1rem solid var(--eh-solid-button-bg);
   border-radius: var(--buttons-radius, 10px);
   background-color: var(--eh-solid-button-bg);
   color: var(--eh-solid-button-text);
+  justify-content: center;
+  min-height: var(--button-min-height);
+  padding: 0 var(--button-padding-x);
   font-family: inherit;
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  line-height: 1;
-  text-transform: uppercase;
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  line-height: var(--button-line-height);
+  text-transform: var(--button-text-transform);
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
@@ -343,8 +344,6 @@ shopify-account.eh__icon {
 
 .eh-promo .eh__button {
   margin-top: auto;
-  padding: 1.2rem 2rem;
-  font-size: 1.2rem;
 }
 
 
@@ -454,13 +453,17 @@ shopify-account.eh__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1.2rem 1.8rem;
+  min-height: var(--button-min-height);
+  padding: 0 var(--button-padding-x);
+  font-family: inherit;
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  letter-spacing: var(--button-letter-spacing);
+  line-height: var(--button-line-height);
+  text-transform: var(--button-text-transform);
   border: 0.1rem solid currentColor;
   border-radius: var(--buttons-radius, 10px);
   color: inherit;
-  font-size: 1.2rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
