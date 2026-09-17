@@ -353,8 +353,8 @@
           "type": "number",
           "id": "font_size",
           "label": "Font size",
-          "info": "In pixels. 0 or blank uses the section-wide word size.",
-          "default": 50
+          "info": "In pixels. Leave at 0 to follow the Word size settings above.",
+          "default": 0
         },
         {
           "type": "range",
@@ -432,8 +432,8 @@
     {
       "name": "Technology showcase",
       "blocks": [
-        { "type": "word", "settings": { "text": "inner", "font_size": 50, "position_x": 80, "position_y": 20, "layer": "front" } },
-        { "type": "word", "settings": { "text": "outer", "font_size": 50, "position_x": 20, "position_y": 80, "layer": "behind" } },
+        { "type": "word", "settings": { "text": "inner", "position_x": 80, "position_y": 20, "layer": "front" } },
+        { "type": "word", "settings": { "text": "outer", "position_x": 20, "position_y": 80, "layer": "behind" } },
         { "type": "hotspot", "settings": { "position_x": 43, "position_y": 40, "title": "inner capsule" } },
         { "type": "hotspot", "settings": { "position_x": 64, "position_y": 80, "title": "outer capsule" } }
       ]

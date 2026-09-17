@@ -359,7 +359,7 @@
           "type": "word",
           "settings": {
             "text": "inner",
-            "font_size": 50,
+            "font_size": 0,
             "position_x": 80,
             "position_y": 20,
             "layer": "front"
@@ -369,7 +369,7 @@
           "type": "word",
           "settings": {
             "text": "outer",
-            "font_size": 50,
+            "font_size": 0,
             "position_x": 20,
             "position_y": 80,
             "layer": "behind"
@@ -381,7 +381,7 @@
             "position_x": 43,
             "position_y": 40,
             "title": "inner capsule",
-            "text": ""
+            "text": "Not visible to the naked eye, within the green inner capsule are 50 billion live bacteria. Protected by the outer shell as it makes its way through the stomach, this inner capsule is able to continue through the gastro-intestinal tract, breaking down in the intestines and releasing the live cultures into your gut microbiome."
           }
         },
         "hotspot_outer": {
@@ -390,7 +390,7 @@
             "position_x": 64,
             "position_y": 80,
             "title": "outer capsule",
-            "text": ""
+            "text": "The transparent outer shell is designed to break down in your stomach, releasing fructooligosaccharides (FOS) fibre, which act as food for the live bacteria. It also contains Vitamin D3, Biotin and Zinc, all of which have been included for their role in supporting a healthy gut."
           }
         }
       },
@@ -419,7 +419,7 @@
         "button_link": "#",
         "button_style_secondary": true,
         "color_scheme": "scheme-1",
-        "tooltip_color_scheme": "",
+        "tooltip_color_scheme": "scheme-5",
         "padding_top": 60,
         "padding_bottom": 60
       }

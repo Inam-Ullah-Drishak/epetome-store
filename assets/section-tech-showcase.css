@@ -165,23 +165,30 @@
 
 .tech-showcase__tooltip {
   position: absolute;
-  top: 50%;
-  left: calc(100% + 1.2rem);
+  top: calc(100% + 1.4rem);
+  left: 50%;
+  z-index: 3;
   width: max-content;
-  max-width: 22rem;
-  padding: 1.2rem 1.6rem;
+  max-width: min(34rem, 80vw);
+  padding: 1.6rem 2rem;
+  border: 0.1rem solid rgba(var(--color-foreground), 0.12);
   border-radius: var(--buttons-radius, 10px);
-  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
-  text-align: left;
+  /* the scheme class sets --color-background; the literal keeps the popup opaque
+     even if the scheme setting is left blank in the customizer */
+  background-color: rgb(var(--color-background, 255 255 255));
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.12);
+  text-align: center;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-50%);
+  transform: translateX(-50%);
   transition: opacity var(--duration-short) ease, visibility var(--duration-short) ease;
 }
 
+/* hotspots past the midpoint hang their popup leftwards so it stays on screen */
 .tech-showcase__hotspot--left .tech-showcase__tooltip {
-  right: calc(100% + 1.2rem);
+  right: 0;
   left: auto;
+  transform: translateX(0);
 }
 
 .tech-showcase__hotspot:hover .tech-showcase__tooltip,
