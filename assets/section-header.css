@@ -229,6 +229,7 @@ shopify-account.eh__icon {
   align-items: center;
   gap: 1.4rem;
   padding: 1.5rem 3rem;
+  border: 0.1rem solid var(--eh-solid-button-bg);
   border-radius: var(--buttons-radius, 10px);
   background-color: var(--eh-solid-button-bg);
   color: var(--eh-solid-button-text);
@@ -243,8 +244,10 @@ shopify-account.eh__icon {
   transition: background-color 0.3s ease, color 0.3s ease, opacity 0.2s ease;
 }
 
+/* Solid button becomes outline on hover */
 .eh__button:hover {
-  opacity: 0.88;
+  background-color: transparent;
+  color: var(--eh-solid-button-bg);
 }
 
 

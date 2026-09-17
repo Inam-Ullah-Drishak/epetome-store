@@ -126,9 +126,15 @@ product-info {
   background-color: rgba(var(--color-button-text), 0.3);
 }
 
+.shopify-payment-button__button--unbranded {
+  transition: background-color var(--duration-short) ease, color var(--duration-short) ease;
+}
+
+/* Solid button becomes outline on hover */
 .shopify-payment-button__button--unbranded:hover,
 .shopify-payment-button__button--unbranded:hover:not([disabled]) {
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
+  background-color: transparent;
+  color: rgb(var(--color-button));
 }
 
 .shopify-payment-button__more-options {
