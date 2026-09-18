@@ -1,5 +1,9 @@
+.video-faq__intro {
+  position:sticky;
+  top:10rem;
+}
 .video-faq__top {
-  display: grid;
+  display: grid; 
   gap: 3.2rem;
 }
 
