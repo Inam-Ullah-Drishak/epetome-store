@@ -115,6 +115,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.8rem 0;
+  padding-right:1rem;
   list-style: none;
   cursor: pointer;
 }
