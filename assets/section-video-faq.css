@@ -1,6 +1,6 @@
 .video-faq__intro {
-  position:sticky;
-  top:10rem;
+  position:relative;
+  top:0rem;
 }
 .video-faq__top {
   display: grid; 
@@ -184,7 +184,7 @@
     font-size: 1.5rem;
   }
   .video-faq__intro {
-  position: relative;
-  top:0rem;
+  position: sticky;
+  top:10 rem;
 }
 }
