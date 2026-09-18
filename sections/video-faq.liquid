@@ -35,108 +35,109 @@
           <div class="video-faq__text rte">{{ section.settings.text }}</div>
         {%- endif -%}
       </div>
-
-      {%- assign video_blocks = section.blocks | where: 'type', 'video' -%}
-      {%- if video_blocks.size > 0 -%}
-        <ul class="video-faq__grid" role="list">
-          {%- for block in video_blocks -%}
-            {%- liquid
-              assign video_id = block.settings.video.id | default: block.settings.video_url.id | default: block.id
-              assign poster = block.settings.cover_image | default: block.settings.video.preview_image
-              assign label = block.settings.question | escape
-            -%}
-            <li class="video-faq__item" {{ block.shopify_attributes }}>
-              <deferred-media
-                class="video-faq__media deferred-media gradient global-media-settings"
-                data-media-id="{{ video_id }}"
-              >
-                <button
-                  id="VideoFaq-Poster-{{ block.id }}"
-                  class="video-faq__poster deferred-media__poster media"
-                  type="button"
-                  aria-label="{{ label }}"
+      <div>
+        {%- assign video_blocks = section.blocks | where: 'type', 'video' -%}
+        {%- if video_blocks.size > 0 -%}
+          <ul class="video-faq__grid" role="list">
+            {%- for block in video_blocks -%}
+              {%- liquid
+                assign video_id = block.settings.video.id | default: block.settings.video_url.id | default: block.id
+                assign poster = block.settings.cover_image | default: block.settings.video.preview_image
+                assign label = block.settings.question | escape
+              -%}
+              <li class="video-faq__item" {{ block.shopify_attributes }}>
+                <deferred-media
+                  class="video-faq__media deferred-media gradient global-media-settings"
+                  data-media-id="{{ video_id }}"
                 >
-                  {%- if poster != blank -%}
-                    {{
-                      poster
-                      | image_url: width: 1200
-                      | image_tag:
-                        loading: 'lazy',
-                        widths: '300, 500, 750, 1000, 1200',
-                        sizes: '(min-width: 990px) 25vw, 45vw',
-                        alt: label
-                    }}
-                  {%- else -%}
-                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-                  {%- endif -%}
-                  <span class="deferred-media__poster-button motion-reduce">
-                    <span class="svg-wrapper">
-                      {{- 'icon-play.svg' | inline_asset_content -}}
-                    </span>
-                  </span>
-                </button>
-                <template>
-                  {%- if block.settings.video == null and block.settings.video_url != null -%}
-                    {%- if block.settings.video_url.type == 'youtube' -%}
-                      <iframe
-                        src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1"
-                        class="js-youtube"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen
-                        title="{{ label }}"
-                      ></iframe>
+                  <button
+                    id="VideoFaq-Poster-{{ block.id }}"
+                    class="video-faq__poster deferred-media__poster media"
+                    type="button"
+                    aria-label="{{ label }}"
+                  >
+                    {%- if poster != blank -%}
+                      {{
+                        poster
+                        | image_url: width: 1200
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '300, 500, 750, 1000, 1200',
+                          sizes: '(min-width: 990px) 25vw, 45vw',
+                          alt: label
+                      }}
                     {%- else -%}
-                      <iframe
-                        src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1"
-                        class="js-vimeo"
-                        allow="autoplay; encrypted-media"
-                        allowfullscreen
-                        title="{{ label }}"
-                      ></iframe>
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
                     {%- endif -%}
-                  {%- else -%}
-                    {{
-                      block.settings.video
-                      | video_tag: image_size: '1100x', autoplay: true, controls: true, muted: false
-                    }}
-                  {%- endif -%}
-                </template>
-              </deferred-media>
+                    <span class="deferred-media__poster-button motion-reduce">
+                      <span class="svg-wrapper">
+                        {{- 'icon-play.svg' | inline_asset_content -}}
+                      </span>
+                    </span>
+                  </button>
+                  <template>
+                    {%- if block.settings.video == null and block.settings.video_url != null -%}
+                      {%- if block.settings.video_url.type == 'youtube' -%}
+                        <iframe
+                          src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1"
+                          class="js-youtube"
+                          allow="autoplay; encrypted-media"
+                          allowfullscreen
+                          title="{{ label }}"
+                        ></iframe>
+                      {%- else -%}
+                        <iframe
+                          src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1"
+                          class="js-vimeo"
+                          allow="autoplay; encrypted-media"
+                          allowfullscreen
+                          title="{{ label }}"
+                        ></iframe>
+                      {%- endif -%}
+                    {%- else -%}
+                      {{
+                        block.settings.video
+                        | video_tag: image_size: '1100x', autoplay: true, controls: true, muted: false
+                      }}
+                    {%- endif -%}
+                  </template>
+                </deferred-media>
 
-              {%- if block.settings.question != blank -%}
-                <p class="video-faq__question">{{ block.settings.question | escape }}</p>
-              {%- endif -%}
+                {%- if block.settings.question != blank -%}
+                  <p class="video-faq__question">{{ block.settings.question | escape }}</p>
+                {%- endif -%}
 
-              {%- if block.settings.transcript != blank -%}
-                <details class="video-faq__transcript">
-                  <summary class="video-faq__transcript-toggle">
-                    <span>{{ section.settings.transcript_label | escape }}</span>
+                {%- if block.settings.transcript != blank -%}
+                  <details class="video-faq__transcript">
+                    <summary class="video-faq__transcript-toggle">
+                      <span>{{ section.settings.transcript_label | escape }}</span>
+                    </summary>
+                    <div class="video-faq__transcript-body rte">{{ block.settings.transcript }}</div>
+                  </details>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+        {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
+        {%- if faq_blocks.size > 0 -%}
+          <ul class="video-faq__accordion" role="list">
+            {%- for block in faq_blocks -%}
+              <li {{ block.shopify_attributes }}>
+                <details class="video-faq__row">
+                  <summary class="video-faq__row-toggle">
+                    <span class="video-faq__row-question">{{ block.settings.question | escape }}</span>
+                    <span class="video-faq__row-icon svg-wrapper">
+                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                    </span>
                   </summary>
-                  <div class="video-faq__transcript-body rte">{{ block.settings.transcript }}</div>
+                  <div class="video-faq__row-answer rte">{{ block.settings.answer }}</div>
                 </details>
-              {%- endif -%}
-            </li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
-      {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
-      {%- if faq_blocks.size > 0 -%}
-        <ul class="video-faq__accordion" role="list">
-          {%- for block in faq_blocks -%}
-            <li {{ block.shopify_attributes }}>
-              <details class="video-faq__row">
-                <summary class="video-faq__row-toggle">
-                  <span class="video-faq__row-question">{{ block.settings.question | escape }}</span>
-                  <span class="video-faq__row-icon svg-wrapper">
-                    {{- 'icon-caret.svg' | inline_asset_content -}}
-                  </span>
-                </summary>
-                <div class="video-faq__row-answer rte">{{ block.settings.answer }}</div>
-              </details>
-            </li>
-          {%- endfor -%}
-        </ul>
-      {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
     </div>
 
     {%- if section.settings.button_label != blank -%}
