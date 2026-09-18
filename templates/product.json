@@ -161,7 +161,7 @@
           "type": "heading",
           "settings": {
             "heading": "developed bya nutritionist.",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_eVTYqw": {
@@ -202,8 +202,81 @@
         "padding_bottom": 40
       }
     },
+    "tech_showcase_djmeQr": {
+      "type": "tech-showcase",
+      "blocks": {
+        "word_TUGEwN": {
+          "type": "word",
+          "settings": {
+            "text": "inner",
+            "font_size": 0,
+            "position_x": 80,
+            "position_y": 20,
+            "layer": "front"
+          }
+        },
+        "word_bPaAHE": {
+          "type": "word",
+          "settings": {
+            "text": "outer",
+            "font_size": 0,
+            "position_x": 20,
+            "position_y": 80,
+            "layer": "behind"
+          }
+        },
+        "hotspot_DzxMBw": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 43,
+            "position_y": 40,
+            "title": "inner capsule",
+            "text": "Not visible to the naked eye, within the green inner capsule are 50 billion live bacteria. Protected by the outer shell as it makes its way through the stomach, this inner capsule is able to continue through the gastro-intestinal tract, breaking down in the intestines and releasing the live cultures into your gut microbiome."
+          }
+        },
+        "hotspot_yjPGYL": {
+          "type": "hotspot",
+          "settings": {
+            "position_x": 64,
+            "position_y": 80,
+            "title": "outer capsule",
+            "text": "The transparent outer shell is designed to break down in your stomach, releasing fructooligosaccharides (FOS) fibre, which act as food for the live bacteria. It also contains Vitamin D3, Biotin and Zinc, all of which have been included for their role in supporting a healthy gut."
+          }
+        }
+      },
+      "block_order": [
+        "word_TUGEwN",
+        "word_bPaAHE",
+        "hotspot_DzxMBw",
+        "hotspot_yjPGYL"
+      ],
+      "settings": {
+        "heading": "optimised by technology.",
+        "heading_size": "h1",
+        "text": "<p>Epetōme's <strong>synbiotic dual cap.</strong> is the meeting point of science and simplicity. 23x higher absorption than non-encapsulated, its unique capsule-in-capsule design ensures targeted delivery of ingredients within the gut, where the microbiome thrives.</p>",
+        "image": "shopify://shop_images/Pill_Blank.png",
+        "image_width": 120,
+        "image_width_mobile": 120,
+        "image_rotation": -35,
+        "animate_image": true,
+        "show_circles": true,
+        "ring_size": 250,
+        "ring_size_mobile": 250,
+        "circle_opacity": 30,
+        "word_size": 40,
+        "word_size_mobile": 30,
+        "button_label": "Learn how",
+        "button_link": "#",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1",
+        "tooltip_color_scheme": "scheme-5",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -225,6 +298,7 @@
     "main",
     "press_marquee_T6dDCq",
     "image_with_text_AHKJpN",
+    "tech_showcase_djmeQr",
     "related-products"
   ]
 }
