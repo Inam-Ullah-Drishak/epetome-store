@@ -6,8 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */
-{
+ */{
   "sections": {
     "video_banner_rhkUth": {
       "type": "video-banner",
@@ -761,8 +760,8 @@
         "button_link": "#",
         "button_style_secondary": true,
         "color_scheme": "scheme-1",
-        "card_bg": "#ffffff",
-        "border_color": "#e3e0d8",
+        "card_bg": "",
+        "border_color": "",
         "padding_top": 80,
         "padding_bottom": 80
       }

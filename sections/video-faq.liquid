@@ -4,8 +4,8 @@
 {%- style -%}
   #VideoFaq-{{ section.id }} {
     --vf-columns: {{ section.settings.columns_mobile }};
-    --vf-card-bg: {{ section.settings.card_bg }};
-    --vf-border: {{ section.settings.border_color }};
+    --vf-card-bg: {% if section.settings.card_bg != blank %}{{ section.settings.card_bg }}{% else %}rgb(var(--color-background)){% endif %};
+    --vf-border: {% if section.settings.border_color != blank %}{{ section.settings.border_color }}{% else %}rgba(var(--color-foreground), 0.12){% endif %};
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
@@ -254,13 +254,15 @@
       "type": "color",
       "id": "card_bg",
       "label": "Card background",
-      "default": "#ffffff"
+      "info": "Leave empty to follow the color scheme.",
+      "default": ""
     },
     {
       "type": "color",
       "id": "border_color",
       "label": "Divider and border",
-      "default": "#e3e0d8"
+      "info": "Leave empty to follow the color scheme.",
+      "default": ""
     },
     {
       "type": "header",
