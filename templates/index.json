@@ -6,8 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */
-{
+ */{
   "sections": {
     "video_banner_rhkUth": {
       "type": "video-banner",
@@ -323,7 +322,7 @@
           "type": "row",
           "settings": {
             "label": "potency.",
-            "caption": "CFU by billions",
+            "caption": "CFU/g (billion)",
             "column_1_type": "text",
             "column_1_value": "50",
             "column_1_caption": "",
@@ -355,7 +354,7 @@
           "type": "row",
           "settings": {
             "label": "diversity.",
-            "caption": "number of bacteria strains",
+            "caption": "number of bacterial strains",
             "column_1_type": "text",
             "column_1_value": "11",
             "column_1_caption": "",
@@ -425,7 +424,7 @@
             "column_1_caption": "1 a day",
             "column_2_type": "text",
             "column_2_value": "yes",
-            "column_2_caption": "10ml a day",
+            "column_2_caption": "70ml a day",
             "column_3_type": "text",
             "column_3_value": "no",
             "column_3_caption": "3+ per day"
@@ -437,7 +436,7 @@
             "label": "price per serving.",
             "caption": "starting from prices",
             "column_1_type": "text",
-            "column_1_value": "£1.30",
+            "column_1_value": "£1.33",
             "column_1_caption": "",
             "column_2_type": "text",
             "column_2_value": "£1.43",
@@ -472,8 +471,8 @@
         "color_scheme": "scheme-1",
         "highlight_bg": "#1f4d3a",
         "highlight_text": "#ffffff",
-        "row_bg": "#ffffff",
-        "border_color": "#e3e0d8",
+        "row_bg": "",
+        "border_color": "#000000",
         "padding_top": 80,
         "padding_bottom": 80
       }

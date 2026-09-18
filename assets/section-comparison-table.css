@@ -45,14 +45,27 @@
   vertical-align: bottom;
 }
 
+/* The ordinary columns carry no fill - the section background shows through, and only
+   the rules between and around the cells describe the grid. */
 .comparison-table__label,
 .comparison-table__cell {
   padding: 1.8rem 1.6rem;
   border-top: 0.1rem solid var(--ct-border);
   vertical-align: middle;
-  /* The card sits behind the rows rather than the whole table, so the highlighted
-     column stands proud of it and reaches up to the column headings. */
-  background-color: var(--ct-row-bg);
+  background-color: var(--ct-row-bg, transparent);
+}
+
+.comparison-table__label {
+  border-left: 0.1rem solid var(--ct-border);
+}
+
+.comparison-table__row .comparison-table__cell:last-child {
+  border-right: 0.1rem solid var(--ct-border);
+}
+
+.comparison-table__row:last-child .comparison-table__label,
+.comparison-table__row:last-child .comparison-table__cell {
+  border-bottom: 0.1rem solid var(--ct-border);
 }
 
 .comparison-table__row:first-child .comparison-table__label {
@@ -71,10 +84,6 @@
   border-bottom-right-radius: 1.2rem;
 }
 
-.comparison-table__row:first-child .comparison-table__label,
-.comparison-table__row:first-child .comparison-table__cell {
-  border-top: 0;
-}
 
 .comparison-table__label {
   width: 40%;
@@ -108,8 +117,8 @@
 
 .comparison-table__icon {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: 2.2rem;
+  height: 2.2rem;
 }
 
 .comparison-table__icon svg {
@@ -131,6 +140,7 @@
 .comparison-table__col--highlight {
   background-color: var(--ct-highlight-bg);
   color: var(--ct-highlight-text);
+  border-color: transparent;
 }
 
 .comparison-table__col--highlight.comparison-table__col-head {
@@ -142,11 +152,13 @@
 
 .comparison-table__row:last-child .comparison-table__col--highlight {
   border-radius: 0 0 1.2rem 1.2rem;
+  /* outranks the last-row rule above, so the card keeps a clean bottom edge */
+  border-color: transparent;
   padding-bottom: 2.8rem;
 }
 
 .comparison-table__col--highlight.comparison-table__cell {
-  border-top-color: rgba(255, 255, 255, 0.18);
+  border-color: transparent;
 }
 
 .comparison-table__col--highlight .comparison-table__icon--yes,
@@ -154,9 +166,6 @@
   color: var(--ct-highlight-text);
 }
 
-.comparison-table__col--highlight .comparison-table__icon--yes {
-  --ct-check-mark: var(--ct-highlight-bg);
-}
 
 .comparison-table__col--highlight .comparison-table__cell-caption {
   opacity: 0.75;
