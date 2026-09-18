@@ -484,6 +484,7 @@
           "settings": {
             "question": "What exactly is your microbiome and why is it important?",
             "video_url": "",
+            "cover_image": "shopify://shop_images/52c73d17abb7427c8c3ccade4b6dcbc0.thumbnail.0000000000_1000x_de41b251-e31c-4631-9b86-5e0e48f1cb00.jpg",
             "transcript": "<p>View Transcript</p>"
           }
         },
@@ -492,6 +493,7 @@
           "settings": {
             "question": "When is it appropriate to take a supplement for gut health?",
             "video_url": "",
+            "cover_image": "shopify://shop_images/68edf18ada5740cba36d8805ff4d0e02.thumbnail.0000000000_1000x_3d38b57b-6146-4bb7-97ac-bcc313702661.jpg",
             "transcript": "<p>View Transcript</p>"
           }
         },
@@ -500,6 +502,7 @@
           "settings": {
             "question": "What can I expect from taking the synbiotic dual cap?",
             "video_url": "",
+            "cover_image": "shopify://shop_images/7eeee84a49b94f0f8121ca7e1c4f9e42.thumbnail.0000000000_1000x_2b66e856-201c-4187-95db-648635bba08f.jpg",
             "transcript": "<p>View Transcript</p>"
           }
         },
