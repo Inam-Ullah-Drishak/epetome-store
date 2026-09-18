@@ -19,8 +19,28 @@
     },
     "video_faq_VAYeMB": {
       "type": "video-faq",
+      "name": "Video FAQ",
+      "settings": {
+        "heading": "emily explains.",
+        "heading_size": "h1",
+        "text": "",
+        "transcript_label": "View Transcript",
+        "columns": 3,
+        "columns_mobile": 1,
+        "button_label": "",
+        "button_link": "",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1",
+        "card_bg": "#ffffff",
+        "border_color": "#e3e0d8",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "video_faq_hzbpXe": {
+      "type": "video-faq",
       "blocks": {
-        "video_wB6MLp": {
+        "video_VNxzVr": {
           "type": "video",
           "settings": {
             "question": "What exactly is your microbiome and why is it important?",
@@ -28,7 +48,7 @@
             "transcript": "<p>View Transcript</p>"
           }
         },
-        "video_An4tUr": {
+        "video_47zTaT": {
           "type": "video",
           "settings": {
             "question": "How do I know if my gut is unhealthy?",
@@ -36,7 +56,7 @@
             "transcript": "<p>View Transcript</p>"
           }
         },
-        "video_XVtMFj": {
+        "video_9pm8R9": {
           "type": "video",
           "settings": {
             "question": "How can I maintain a healthy gut?",
@@ -46,9 +66,9 @@
         }
       },
       "block_order": [
-        "video_wB6MLp",
-        "video_An4tUr",
-        "video_XVtMFj"
+        "video_VNxzVr",
+        "video_47zTaT",
+        "video_9pm8R9"
       ],
       "name": "Video FAQ",
       "settings": {
@@ -266,6 +286,7 @@
   "order": [
     "main",
     "video_faq_VAYeMB",
+    "video_faq_hzbpXe",
     "video_faq_jb7RfP",
     "video_faq_b4WRhB",
     "rich_text_9HW7yj"
