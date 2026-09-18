@@ -274,6 +274,286 @@
         "padding_bottom": 60
       }
     },
+    "comparison_table_Ehefqr": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_WjKnam": {
+          "type": "row",
+          "settings": {
+            "label": "potency.",
+            "caption": "CFU/g (billion)",
+            "column_1_type": "text",
+            "column_1_value": "50",
+            "column_1_caption": "",
+            "column_2_type": "text",
+            "column_2_value": "10",
+            "column_2_caption": "",
+            "column_3_type": "text",
+            "column_3_value": "10-20",
+            "column_3_caption": ""
+          }
+        },
+        "row_xiJQjq": {
+          "type": "row",
+          "settings": {
+            "label": "synbiotic dual cap technology.",
+            "caption": "",
+            "column_1_type": "yes",
+            "column_1_value": "",
+            "column_1_caption": "",
+            "column_2_type": "no",
+            "column_2_value": "",
+            "column_2_caption": "",
+            "column_3_type": "no",
+            "column_3_value": "",
+            "column_3_caption": ""
+          }
+        },
+        "row_T7CLKG": {
+          "type": "row",
+          "settings": {
+            "label": "diversity.",
+            "caption": "number of bacterial strains",
+            "column_1_type": "text",
+            "column_1_value": "11",
+            "column_1_caption": "",
+            "column_2_type": "text",
+            "column_2_value": "4",
+            "column_2_caption": "",
+            "column_3_type": "text",
+            "column_3_value": "7-14",
+            "column_3_caption": ""
+          }
+        },
+        "row_iQzjXW": {
+          "type": "row",
+          "settings": {
+            "label": "prebiotic included.",
+            "caption": "",
+            "column_1_type": "yes",
+            "column_1_value": "",
+            "column_1_caption": "",
+            "column_2_type": "no",
+            "column_2_value": "",
+            "column_2_caption": "",
+            "column_3_type": "no",
+            "column_3_value": "",
+            "column_3_caption": ""
+          }
+        },
+        "row_EryaqN": {
+          "type": "row",
+          "settings": {
+            "label": "vitamins & minerals included.",
+            "caption": "",
+            "column_1_type": "yes",
+            "column_1_value": "",
+            "column_1_caption": "",
+            "column_2_type": "no",
+            "column_2_value": "",
+            "column_2_caption": "",
+            "column_3_type": "no",
+            "column_3_value": "",
+            "column_3_caption": ""
+          }
+        },
+        "row_q4ftGN": {
+          "type": "row",
+          "settings": {
+            "label": "convenient storage.",
+            "caption": "",
+            "column_1_type": "text",
+            "column_1_value": "yes",
+            "column_1_caption": "cupboard",
+            "column_2_type": "text",
+            "column_2_value": "no",
+            "column_2_caption": "refrigerated",
+            "column_3_type": "text",
+            "column_3_value": "yes",
+            "column_3_caption": "cupboard"
+          }
+        },
+        "row_weH7Az": {
+          "type": "row",
+          "settings": {
+            "label": "convenient consumption.",
+            "caption": "",
+            "column_1_type": "text",
+            "column_1_value": "yes",
+            "column_1_caption": "1 a day",
+            "column_2_type": "text",
+            "column_2_value": "yes",
+            "column_2_caption": "70ml a day",
+            "column_3_type": "text",
+            "column_3_value": "no",
+            "column_3_caption": "3+ per day"
+          }
+        },
+        "row_ryAJxf": {
+          "type": "row",
+          "settings": {
+            "label": "price per serving.",
+            "caption": "starting from prices",
+            "column_1_type": "text",
+            "column_1_value": "£1.33",
+            "column_1_caption": "",
+            "column_2_type": "text",
+            "column_2_value": "£1.43",
+            "column_2_caption": "",
+            "column_3_type": "text",
+            "column_3_value": "£1.33",
+            "column_3_caption": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_WjKnam",
+        "row_xiJQjq",
+        "row_T7CLKG",
+        "row_iQzjXW",
+        "row_EryaqN",
+        "row_q4ftGN",
+        "row_weH7Az",
+        "row_ryAJxf"
+      ],
+      "name": "Comparison table",
+      "settings": {
+        "heading": "what sets epetōme apart?",
+        "heading_size": "h1",
+        "subheading": "pre + pro + synbiotic dual cap.",
+        "column_count": 3,
+        "column_1_heading": "epetōme.",
+        "column_2_heading": "non-encapsulated",
+        "column_3_heading": "standard capsules",
+        "highlight_column": 1,
+        "footnote": "<p>Epetōme looks different, and for good reason. Just one potent daily dose of biotics with advanced synbiotic dual cap technology, to ensure each ingredient is delivered with precision - to the right place, at the right time.</p>",
+        "color_scheme": "scheme-1",
+        "highlight_bg": "#1f4d3a",
+        "highlight_text": "#ffffff",
+        "row_bg": "",
+        "border_color": "#000000",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "video_faq_tFLijq": {
+      "type": "video-faq",
+      "blocks": {
+        "video_KgxaiT": {
+          "type": "video",
+          "settings": {
+            "question": "What exactly is your microbiome and why is it important?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_7ecBML": {
+          "type": "video",
+          "settings": {
+            "question": "I have heard “prebiotic” and “probiotic” foods are good for my gut. Is this true and what does this mean?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_VFiggV": {
+          "type": "video",
+          "settings": {
+            "question": "When is it appropriate to take a supplement for gut health?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_Dnf8NT": {
+          "type": "video",
+          "settings": {
+            "question": "What is Epetōme’s synbiotic dual cap?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_CnLG4p": {
+          "type": "video",
+          "settings": {
+            "question": "What is unique about this capsule?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_VWHhiw": {
+          "type": "video",
+          "settings": {
+            "question": "What can I expect from taking the synbiotic dual cap?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "faq_eaLaBp": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the synbiotic dual cap a probiotic?",
+            "answer": "<p>The capsule contains live bacteria, therefore it can be considered a probiotic. It also contains fructooligosaccharides (FOS) which can be considered prebiotics. However, we refrain from using such terms as UK Law prevents this, seeing our products as food supplements to which no health claims can be associated.</p>"
+          }
+        },
+        "faq_WV8HXM": {
+          "type": "faq",
+          "settings": {
+            "question": "How long do I need to take the synbiotic dual cap for?",
+            "answer": "<p>We recommend taking one capsule a day for a minimum of 3 months. This is how long your microbiome needs to adjust to the new bacteria, as also recommended by the British Society of Gastroenterology to anyone trying a new bacterial product.</p>"
+          }
+        },
+        "faq_XJTCKi": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I take other supplements alongside this for my gut or is Epetōme enough?",
+            "answer": "<p>The synbiotic dual cap has been designed to provide one potent dosage of 50 billion live bacteria in one capsule, from 11 unique strains, alongside other vitamins and minerals that support overall gut health. Therefore as far as live bacteria supplements go, our synbiotic dual cap. should be enough.</p>"
+          }
+        },
+        "faq_MTcibf": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any side effects from taking the synbiotic dual cap?",
+            "answer": "<p>Our gut microbiome is as unique as our fingerprint, therefore your experience with our products will be unique to you. Whilst there should be no adverse effects, some people have reported experiencing an upset stomach, gas, diarrhea, or bloating. Those symptoms usually go away after your body gets used to the bacteria in the synbiotic dual cap (usually within 1-4 weeks). However, if the problem persists, please stop taking immediately and consult your GP.</p>"
+          }
+        },
+        "faq_7njFxd": {
+          "type": "faq",
+          "settings": {
+            "question": "Other than my gut, will I find any other benefits to taking Epetōme?",
+            "answer": "<p>Epetōme is officially classed as a food supplement by UK law, and therefore we cannot legally claim specific health benefits ourselves. We encourage you to do your research.<br/><br/>OurResearch Library contains a whole host of studies conducted on the ingredients within our capsule.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_KgxaiT",
+        "video_7ecBML",
+        "video_VFiggV",
+        "video_Dnf8NT",
+        "video_CnLG4p",
+        "video_VWHhiw",
+        "faq_eaLaBp",
+        "faq_WV8HXM",
+        "faq_XJTCKi",
+        "faq_MTcibf",
+        "faq_7njFxd"
+      ],
+      "name": "Video FAQ",
+      "settings": {
+        "heading": "emily answers your questions about epetōme:",
+        "heading_size": "h2",
+        "text": "<p>The world of supplements and gut health can be confusing. So below I have answered some of your most asked questions.</p>",
+        "transcript_label": "View Transcript",
+        "columns": 3,
+        "columns_mobile": 1,
+        "button_label": "All answers",
+        "button_link": "#",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1",
+        "card_bg": "",
+        "border_color": "",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -299,6 +579,8 @@
     "press_marquee_T6dDCq",
     "image_with_text_AHKJpN",
     "tech_showcase_djmeQr",
+    "comparison_table_Ehefqr",
+    "video_faq_tFLijq",
     "related-products"
   ]
 }
