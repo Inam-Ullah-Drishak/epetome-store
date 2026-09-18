@@ -41,6 +41,7 @@
 .icon-grid__tile {
   display: flex;
   gap: 1rem;
+  border-radius: 0.6rem;
   align-items: center;
   background-color: var(--ig-tile-bg);
   padding: 1.6rem;
