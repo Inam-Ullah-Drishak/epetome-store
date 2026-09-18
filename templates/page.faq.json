@@ -24,21 +24,21 @@
           "type": "video",
           "settings": {
             "question": "What exactly is your microbiome and why is it important?",
-            "transcript": ""
+            "transcript": "<p>View Transcript</p>"
           }
         },
         "video_An4tUr": {
           "type": "video",
           "settings": {
-            "question": "What is unique about this capsule?",
-            "transcript": ""
+            "question": "How do I know if my gut is unhealthy?",
+            "transcript": "<p>View Transcript</p>"
           }
         },
         "video_XVtMFj": {
           "type": "video",
           "settings": {
-            "question": "What can I expect from taking the synbiotic dual cap?",
-            "transcript": ""
+            "question": "How can I maintain a healthy gut?",
+            "transcript": "<p>View Transcript</p>"
           }
         }
       },
@@ -64,10 +64,76 @@
         "padding_top": 50,
         "padding_bottom": 50
       }
+    },
+    "video_faq_jb7RfP": {
+      "type": "video-faq",
+      "blocks": {
+        "video_4i9J37": {
+          "type": "video",
+          "settings": {
+            "question": "I have heard “prebiotic” and “probiotic” foods are good for my gut. Is this true and what does this mean?",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_MXaDEF": {
+          "type": "video",
+          "settings": {
+            "question": "What is a postbiotic?",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_QRgFMX": {
+          "type": "video",
+          "settings": {
+            "question": "Can we get everything we need from food to have a healthy microbiome?",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_mDVhji": {
+          "type": "video",
+          "settings": {
+            "question": "When is it appropriate to take a supplement for gut health?",
+            "video_url": "",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "faq_Vd8rMJ": {
+          "type": "faq",
+          "settings": {
+            "question": "What makes a good gut health supplement?",
+            "answer": "<p>It’s important to look for a mix of:</p><ul><li>Potency - look for the colony-forming unit (CFU) count. This measures the number of bacteria in each dose that are viable (alive) and active (able to multiply). The higher the count, the more bacteria you will consume.</li><li>Diversity - the type of bacteria it contains are also important. Generally looking for the genus <em>Lactobacillus, Bifidobacterium, Bacillus</em> or <em>Saccharomyces boulardii</em>, some of the most researched strains, is worthwhile.</li><li>Delivery method - when consuming bacteria, they will need to survive the harsh conditions of your stomach, such as intense pH level changes. Many supplements boast high CFU counts but the bacteria struggle to survive from manufacture to shelf and, more importantly, through your digestive system to your gut. Look out for the % of bacteria promised to make it to the gut alive.</li><li>Convenience - these products can only benefit you if you remember to take them. Therefore, choosing a product that is easy to consume and that you enjoy taking is also important.</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "video_4i9J37",
+        "video_MXaDEF",
+        "video_QRgFMX",
+        "video_mDVhji",
+        "faq_Vd8rMJ"
+      ],
+      "name": "Video FAQ",
+      "settings": {
+        "heading": "nutritional & diet.",
+        "heading_size": "h2",
+        "text": "",
+        "transcript_label": "View Transcript",
+        "columns": 3,
+        "columns_mobile": 1,
+        "button_label": "",
+        "button_link": "",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1",
+        "card_bg": "#ffffff",
+        "border_color": "#e3e0d8",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
     }
   },
   "order": [
     "main",
-    "video_faq_VAYeMB"
+    "video_faq_VAYeMB",
+    "video_faq_jb7RfP"
   ]
 }
