@@ -25,21 +25,21 @@
           "type": "link_list",
           "settings": {
             "heading": "learn.",
-            "menu": "footer"
+            "menu": "footermenu-2"
           }
         },
         "link_list_support": {
           "type": "link_list",
           "settings": {
             "heading": "support.",
-            "menu": "footer"
+            "menu": "footer-menu-3"
           }
         },
         "link_list_extras": {
           "type": "link_list",
           "settings": {
             "heading": "extras.",
-            "menu": "footer"
+            "menu": "footer-menu-4"
           }
         }
       },
