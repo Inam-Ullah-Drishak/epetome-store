@@ -31,7 +31,7 @@
   padding: 0;
   border: 0.1rem solid var(--ig-tile-border);
   border-radius: 1rem;
-  
+  gap:1rem;
   list-style: none;
   overflow: hidden;
 }
