@@ -554,6 +554,74 @@
         "padding_bottom": 80
       }
     },
+    "icon_grid_fP876K": {
+      "type": "icon-grid",
+      "blocks": {
+        "tile_iM8Tp8": {
+          "type": "tile",
+          "settings": {
+            "label": "mind",
+            "icon": "mind",
+            "image": "shopify://shop_images/Frame_1093_70x_216e18cf-5aff-47bf-8766-65cab550e2a9.png"
+          }
+        },
+        "tile_wEkJzY": {
+          "type": "tile",
+          "settings": {
+            "label": "skin",
+            "icon": "skin",
+            "image": "shopify://shop_images/Group_70x_7abc6cf0-6b60-4baa-aae6-83ab1bc030ba.png"
+          }
+        },
+        "tile_LdXy4z": {
+          "type": "tile",
+          "settings": {
+            "label": "immunity",
+            "icon": "immunity",
+            "image": "shopify://shop_images/Frame_1093_1_70x_34c48933-a3e4-47bc-a516-79364a112b69.png"
+          }
+        },
+        "tile_qHwKaQ": {
+          "type": "tile",
+          "settings": {
+            "label": "digestion",
+            "icon": "digestion",
+            "image": "shopify://shop_images/Frame_1093_2_70x_843973e2-60d3-45aa-bd87-50165c49fbf4.png"
+          }
+        },
+        "tile_JhQpWd": {
+          "type": "tile",
+          "settings": {
+            "label": "hormones",
+            "icon": "hormones",
+            "image": "shopify://shop_images/Frame_1093_3_70x_006f74bb-fada-4313-95d5-5a9555d74f9f.png"
+          }
+        }
+      },
+      "block_order": [
+        "tile_iM8Tp8",
+        "tile_wEkJzY",
+        "tile_LdXy4z",
+        "tile_qHwKaQ",
+        "tile_JhQpWd"
+      ],
+      "name": "Icon grid",
+      "settings": {
+        "heading": "The importance of a healthy gut microbiome.",
+        "heading_size": "h2",
+        "text": "<p>Our gut bacteria play an incredibly complex and critical role in helping us thrive. The microbiome affects everything from digestion to the immune system, hormones, skin health and even mental wellbeing.</p>",
+        "button_label": "Learn more",
+        "button_link": "#",
+        "button_style_secondary": true,
+        "columns": 2,
+        "columns_mobile": 2,
+        "color_scheme": "scheme-1",
+        "tile_bg": "#ffffff",
+        "tile_border": "#e3e0d8",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -581,6 +649,7 @@
     "tech_showcase_djmeQr",
     "comparison_table_Ehefqr",
     "video_faq_tFLijq",
+    "icon_grid_fP876K",
     "related-products"
   ]
 }
