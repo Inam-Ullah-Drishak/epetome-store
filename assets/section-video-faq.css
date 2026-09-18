@@ -42,7 +42,7 @@
 /* --ratio-percent only works through the .ratio class in Dawn, which this markup does
    not use, so the box sets its own ratio and every thumbnail matches. */
 .video-faq__media {
-  aspect-ratio: 1;
+  aspect-ratio: 6/9;
   border-radius: 0.6rem;
   overflow: hidden;
 }
