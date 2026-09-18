@@ -183,4 +183,8 @@
   .video-faq__row-question {
     font-size: 1.5rem;
   }
+  .video-faq__intro {
+  position: relative;
+  top:0rem;
+}
 }
