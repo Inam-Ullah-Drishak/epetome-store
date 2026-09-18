@@ -67,6 +67,24 @@
             "page": ""
           }
         },
+        "collapsible_tab_DayG6A": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Free delivery on all UK orders",
+            "icon": "truck",
+            "content": "<p>EU and International shipping rates vary, and you may also need to pay local taxes. For more information on delivery times and rates visit our <strong>Shipping Page</strong>.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_ceFDrY": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Eco-friendly packaging info ",
+            "icon": "box",
+            "content": "<p>Your first order arrives in a reusable jar. Keep your jar. From your second order onwards, refill sachets will arrive every three or six months for effortless top ups.</p>",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -84,6 +102,8 @@
         "buy_buttons",
         "collapsible_tab_fRpctx",
         "collapsible_tab_p7FGfG",
+        "collapsible_tab_DayG6A",
+        "collapsible_tab_ceFDrY",
         "share"
       ],
       "settings": {
