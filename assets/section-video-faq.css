@@ -21,6 +21,7 @@
 
 /* Video grid */
 .video-faq__grid {
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: repeat(var(--vf-columns), minmax(0, 1fr));
   gap: 1rem;
@@ -104,7 +105,6 @@
 
 /* FAQ accordion */
 .video-faq__accordion {
-  margin: 4rem 0 0;
   padding: 0;
   color: rgb(var(--color-foreground));
   list-style: none;
@@ -182,9 +182,5 @@
 
   .video-faq__row-question {
     font-size: 1.5rem;
-  }
-
-  .video-faq__accordion {
-    margin-top: 6rem;
   }
 }
