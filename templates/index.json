@@ -6,8 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */
-{
+ */{
   "sections": {
     "video_banner_rhkUth": {
       "type": "video-banner",
@@ -372,7 +371,7 @@
         "button_style_secondary": true,
         "columns": 2,
         "columns_mobile": 2,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "tile_bg": "#ffffff",
         "tile_border": "#e3e0d8",
         "padding_top": 80,
@@ -436,7 +435,7 @@
         "gap": 8,
         "image_radius": 0,
         "full_width": false,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding_top": 60,
         "padding_bottom": 60
       }
@@ -554,7 +553,7 @@
         "button_label": "All answers",
         "button_link": "",
         "button_style_secondary": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "card_bg": "#ffffff",
         "border_color": "#e3e0d8",
         "padding_top": 80,
@@ -714,7 +713,7 @@
         "column_3_heading": "standard capsules",
         "highlight_column": 1,
         "footnote": "<p>Epetōme looks different, and for good reason. Just one potent daily dose of biotics with advanced synbiotic dual cap technology, to ensure each ingredient is delivered with precision - to the right place, at the right time.</p>",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "highlight_bg": "#1f4d3a",
         "highlight_text": "#ffffff",
         "row_bg": "#ffffff",
@@ -838,11 +837,11 @@
     "product_spotlight",
     "image_with_text_Nm6KbC",
     "tech_showcase",
-    "icon_grid_Mibw9q",
-    "community_feed_D6eYVN",
-    "video_faq_YKYPhm",
     "comparison_table_Qjk3Rb",
     "image_banner_rhMiqG",
-    "image_banner_UacLXQ"
+    "image_banner_UacLXQ",
+    "icon_grid_Mibw9q",
+    "video_faq_YKYPhm",
+    "community_feed_D6eYVN"
   ]
 }

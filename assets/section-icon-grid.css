@@ -27,20 +27,23 @@
 .icon-grid__list {
   display: grid;
   grid-template-columns: repeat(var(--ig-columns), minmax(0, 1fr));
-  gap: 1.2rem;
   margin: 0;
   padding: 0;
+  border: 0.1rem solid var(--ig-tile-border);
+  border-radius: 1rem;
+  background-color: var(--ig-tile-bg);
   list-style: none;
+  overflow: hidden;
 }
 
+/* Each tile draws its own right and bottom rule; the rules that land on the outer
+   edge are clipped by the container, so the grid needs no per-cell edge cases. */
 .icon-grid__tile {
   display: flex;
   gap: 1.2rem;
   align-items: center;
   padding: 1.6rem;
-  border: 0.1rem solid var(--ig-tile-border);
-  border-radius: 1rem;
-  background-color: var(--ig-tile-bg);
+  box-shadow: 0.1rem 0 0 0 var(--ig-tile-border), 0 0.1rem 0 0 var(--ig-tile-border);
 }
 
 .icon-grid__icon {
@@ -67,10 +70,6 @@
   .icon-grid__inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 6.4rem;
-  }
-
-  .icon-grid__list {
-    gap: 1.6rem;
   }
 
   .icon-grid__tile {

@@ -34,10 +34,19 @@
   background-color: var(--vf-card-bg);
 }
 
+/* --ratio-percent only works through the .ratio class in Dawn, which this markup does
+   not use, so the box sets its own ratio and every thumbnail matches. */
 .video-faq__media {
-  --ratio-percent: 125%;
+  aspect-ratio: 1;
   border-radius: 0.6rem;
   overflow: hidden;
+}
+
+.video-faq__media .deferred-media__poster,
+.video-faq__media iframe,
+.video-faq__media video {
+  width: 100%;
+  height: 100%;
 }
 
 .video-faq__poster {

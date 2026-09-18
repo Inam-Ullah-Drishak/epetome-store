@@ -30,8 +30,6 @@
 }
 
 .comparison-table__table {
-  background-color: var(--ct-row-bg);
-  border-radius: 1.2rem;
   width: 100%;
   min-width: 58rem;
   border-collapse: separate;
@@ -52,6 +50,25 @@
   padding: 1.8rem 1.6rem;
   border-top: 0.1rem solid var(--ct-border);
   vertical-align: middle;
+  /* The card sits behind the rows rather than the whole table, so the highlighted
+     column stands proud of it and reaches up to the column headings. */
+  background-color: var(--ct-row-bg);
+}
+
+.comparison-table__row:first-child .comparison-table__label {
+  border-top-left-radius: 1.2rem;
+}
+
+.comparison-table__row:last-child .comparison-table__label {
+  border-bottom-left-radius: 1.2rem;
+}
+
+.comparison-table__row:first-child .comparison-table__cell:last-child {
+  border-top-right-radius: 1.2rem;
+}
+
+.comparison-table__row:last-child .comparison-table__cell:last-child {
+  border-bottom-right-radius: 1.2rem;
 }
 
 .comparison-table__row:first-child .comparison-table__label,
