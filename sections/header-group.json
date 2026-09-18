@@ -65,7 +65,8 @@
         "promo_subheading": "synbiotic dual cap.",
         "promo_heading": "meet your new gut health routine.",
         "promo_button_label": "Shop now",
-        "promo_button_link": "",
+        "promo_button_link": "shopify://products/synbiotic-duo-cap",
+        "promo_image": "shopify://shop_images/Frame_4586.jpg",
         "promo_bg": "#dde8d8",
         "padding_y": 24
       }
