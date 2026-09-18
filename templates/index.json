@@ -316,112 +316,249 @@
         "padding_bottom": 60
       }
     },
-    "image_banner_rhMiqG": {
-      "type": "image-banner",
+    "icon_grid_Mibw9q": {
+      "type": "icon-grid",
       "blocks": {
-        "heading_8RXi4x": {
-          "type": "heading",
+        "tile_ejhtiU": {
+          "type": "tile",
           "settings": {
-            "heading": "backed by  science.",
-            "heading_size": "h1"
+            "label": "mind",
+            "icon": "mind"
           }
         },
-        "text_VkYcaW": {
-          "type": "text",
+        "tile_fztept": {
+          "type": "tile",
           "settings": {
-            "text": "Clinically validated bacterial strains have been selected for our transformative supplement.",
-            "text_style": "body"
+            "label": "skin",
+            "icon": "skin"
           }
         },
-        "buttons_9MDNFy": {
-          "type": "buttons",
+        "tile_PANegQ": {
+          "type": "tile",
           "settings": {
-            "button_label_1": "INSIDE THE CAP",
-            "button_link_1": "#",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "label": "immunity",
+            "icon": "immunity"
+          }
+        },
+        "tile_JECkNq": {
+          "type": "tile",
+          "settings": {
+            "label": "digestion",
+            "icon": "digestion"
+          }
+        },
+        "tile_GRmB7J": {
+          "type": "tile",
+          "settings": {
+            "label": "hormones",
+            "icon": "hormones"
           }
         }
       },
       "block_order": [
-        "heading_8RXi4x",
-        "text_VkYcaW",
-        "buttons_9MDNFy"
+        "tile_ejhtiU",
+        "tile_fztept",
+        "tile_PANegQ",
+        "tile_JECkNq",
+        "tile_GRmB7J"
       ],
-      "custom_css": [
-        "@media screen and (max-width: 749px) {#Banner-template--28188019228970__image_banner_rhMiqG .banner__buttons {margin-top: 30rem; }}"
-      ],
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Icon grid",
       "settings": {
-        "image": "shopify://shop_images/Shot_2.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "bottom-left",
-        "desktop_content_alignment": "left",
-        "content_max_width": 400,
-        "show_text_box": false,
-        "color_scheme": "scheme-4",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "left",
-        "content_max_width_mobile": 80,
-        "show_text_below": false
+        "heading": "The importance of a healthy gut microbiome.",
+        "heading_size": "h2",
+        "text": "<p>Our gut bacteria play an incredibly complex and critical role in helping us thrive. The microbiome affects everything from digestion to the immune system, hormones, skin health and even mental wellbeing.</p>",
+        "button_label": "Learn more",
+        "button_link": "",
+        "button_style_secondary": true,
+        "columns": 2,
+        "columns_mobile": 2,
+        "color_scheme": "",
+        "tile_bg": "#ffffff",
+        "tile_border": "#e3e0d8",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
-    "image_banner_UacLXQ": {
-      "type": "image-banner",
+    "community_feed_D6eYVN": {
+      "type": "community-feed",
       "blocks": {
-        "heading_GaP3B7": {
-          "type": "heading",
+        "image_99fPXa": {
+          "type": "image",
           "settings": {
-            "heading": "curated forconvenience.",
-            "heading_size": "h1"
+            "link": "",
+            "alt": ""
           }
         },
-        "text_yGAnwC": {
-          "type": "text",
+        "image_HtAfgH": {
+          "type": "image",
           "settings": {
-            "text": "Just once a day, every day - no gimmicks,no refrigeration, no blending. Just take asyou hydrate first thing in the morning.",
-            "text_style": "body"
+            "link": "",
+            "alt": ""
           }
         },
-        "buttons_tpzccM": {
-          "type": "buttons",
+        "image_RAmYL7": {
+          "type": "image",
           "settings": {
-            "button_label_1": "START YOUR JOURNEY",
-            "button_link_1": "#",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "link": "",
+            "alt": ""
+          }
+        },
+        "image_6Ccntr": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": ""
+          }
+        },
+        "image_z9rqDd": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "alt": ""
           }
         }
       },
       "block_order": [
-        "heading_GaP3B7",
-        "text_yGAnwC",
-        "buttons_tpzccM"
+        "image_99fPXa",
+        "image_HtAfgH",
+        "image_RAmYL7",
+        "image_6Ccntr",
+        "image_z9rqDd"
       ],
-      "custom_css": [
-        "@media screen and (max-width: 749px) {#Banner-template--28188019228970__image_banner_UacLXQ .banner__buttons {margin-top: 30rem; }}"
-      ],
-      "name": "t:sections.image-banner.presets.name",
+      "name": "Community feed",
       "settings": {
-        "image": "shopify://shop_images/8aaa1041d05d7ae8aca7b24bef448894.jpg",
-        "image_overlay_opacity": 20,
-        "image_height": "large",
-        "image_behavior": "none",
-        "desktop_content_position": "bottom-left",
-        "desktop_content_alignment": "left",
-        "content_max_width": 400,
-        "show_text_box": false,
-        "color_scheme": "scheme-4",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "left",
-        "content_max_width_mobile": 80,
-        "show_text_below": false
+        "heading": "join our community.",
+        "heading_size": "h2",
+        "handle": "@epetome_co",
+        "handle_link": "",
+        "columns": 5,
+        "columns_mobile": 2,
+        "gap": 8,
+        "image_radius": 0,
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "video_faq_YKYPhm": {
+      "type": "video-faq",
+      "blocks": {
+        "video_dAiMP9": {
+          "type": "video",
+          "settings": {
+            "question": "What exactly is your microbiome and why is it important?",
+            "transcript": ""
+          }
+        },
+        "video_AjBX6n": {
+          "type": "video",
+          "settings": {
+            "question": "I have heard 'prebiotic' and 'probiotic' foods are good for my gut. Is this true and what does this mean?",
+            "transcript": ""
+          }
+        },
+        "video_bCKd9z": {
+          "type": "video",
+          "settings": {
+            "question": "When is it appropriate to take a supplement for gut health?",
+            "transcript": ""
+          }
+        },
+        "video_n94GK6": {
+          "type": "video",
+          "settings": {
+            "question": "What is Epetōme's synbiotic dual cap?",
+            "transcript": ""
+          }
+        },
+        "video_WAaBLc": {
+          "type": "video",
+          "settings": {
+            "question": "What is unique about this capsule?",
+            "transcript": ""
+          }
+        },
+        "video_arn7qb": {
+          "type": "video",
+          "settings": {
+            "question": "What can I expect from taking the synbiotic dual cap?",
+            "transcript": ""
+          }
+        },
+        "faq_Trmgkw": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the synbiotic dual cap a probiotic?",
+            "answer": ""
+          }
+        },
+        "faq_TjGhfw": {
+          "type": "faq",
+          "settings": {
+            "question": "How long do I need to take the synbiotic dual cap for?",
+            "answer": ""
+          }
+        },
+        "faq_HL8ryW": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I take other supplements alongside this for my gut or is Epetōme enough?",
+            "answer": ""
+          }
+        },
+        "faq_JgMtx3": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the active ingredients in the synbiotic dual cap?",
+            "answer": ""
+          }
+        },
+        "faq_rK4FtQ": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any side effects from taking the synbiotic dual cap?",
+            "answer": ""
+          }
+        },
+        "faq_TWGRN4": {
+          "type": "faq",
+          "settings": {
+            "question": "Other than my gut, will I find any other benefits to taking Epetōme?",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_dAiMP9",
+        "video_AjBX6n",
+        "video_bCKd9z",
+        "video_n94GK6",
+        "video_WAaBLc",
+        "video_arn7qb",
+        "faq_Trmgkw",
+        "faq_TjGhfw",
+        "faq_HL8ryW",
+        "faq_JgMtx3",
+        "faq_rK4FtQ",
+        "faq_TWGRN4"
+      ],
+      "name": "Video FAQ",
+      "settings": {
+        "heading": "emily answers your questions about epetōme:",
+        "heading_size": "h2",
+        "text": "<p>The world of supplements and gut health can be confusing. So below I have answered some of your most asked questions.</p>",
+        "transcript_label": "View Transcript",
+        "columns": 3,
+        "columns_mobile": 1,
+        "button_label": "All answers",
+        "button_link": "",
+        "button_style_secondary": true,
+        "color_scheme": "",
+        "card_bg": "#ffffff",
+        "border_color": "#e3e0d8",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "comparison_table_Qjk3Rb": {
@@ -585,6 +722,114 @@
         "padding_top": 80,
         "padding_bottom": 80
       }
+    },
+    "image_banner_rhMiqG": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_8RXi4x": {
+          "type": "heading",
+          "settings": {
+            "heading": "backed by  science.",
+            "heading_size": "h1"
+          }
+        },
+        "text_VkYcaW": {
+          "type": "text",
+          "settings": {
+            "text": "Clinically validated bacterial strains have been selected for our transformative supplement.",
+            "text_style": "body"
+          }
+        },
+        "buttons_9MDNFy": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "INSIDE THE CAP",
+            "button_link_1": "#",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8RXi4x",
+        "text_VkYcaW",
+        "buttons_9MDNFy"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {#Banner-template--28188019228970__image_banner_rhMiqG .banner__buttons {margin-top: 30rem; }}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Shot_2.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "content_max_width": 400,
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "left",
+        "content_max_width_mobile": 80,
+        "show_text_below": false
+      }
+    },
+    "image_banner_UacLXQ": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_GaP3B7": {
+          "type": "heading",
+          "settings": {
+            "heading": "curated forconvenience.",
+            "heading_size": "h1"
+          }
+        },
+        "text_yGAnwC": {
+          "type": "text",
+          "settings": {
+            "text": "Just once a day, every day - no gimmicks,no refrigeration, no blending. Just take asyou hydrate first thing in the morning.",
+            "text_style": "body"
+          }
+        },
+        "buttons_tpzccM": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "START YOUR JOURNEY",
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_GaP3B7",
+        "text_yGAnwC",
+        "buttons_tpzccM"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 749px) {#Banner-template--28188019228970__image_banner_UacLXQ .banner__buttons {margin-top: 30rem; }}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/8aaa1041d05d7ae8aca7b24bef448894.jpg",
+        "image_overlay_opacity": 20,
+        "image_height": "large",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "content_max_width": 400,
+        "show_text_box": false,
+        "color_scheme": "scheme-4",
+        "stack_images_on_mobile": false,
+        "mobile_content_alignment": "left",
+        "content_max_width_mobile": 80,
+        "show_text_below": false
+      }
     }
   },
   "order": [
@@ -593,6 +838,9 @@
     "product_spotlight",
     "image_with_text_Nm6KbC",
     "tech_showcase",
+    "icon_grid_Mibw9q",
+    "community_feed_D6eYVN",
+    "video_faq_YKYPhm",
     "comparison_table_Qjk3Rb",
     "image_banner_rhMiqG",
     "image_banner_UacLXQ"
