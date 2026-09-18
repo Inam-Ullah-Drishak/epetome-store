@@ -127,8 +127,10 @@
                 <details class="video-faq__row">
                   <summary class="video-faq__row-toggle">
                     <span class="video-faq__row-question">{{ block.settings.question | escape }}</span>
-                    <span class="video-faq__row-icon svg-wrapper">
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
+                    <span class="video-faq__row-icon">
+                      <svg class="video-faq__caret" viewBox="0 0 10 6" fill="none" aria-hidden="true" focusable="false">
+                        <path d="m1 1 4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
                     </span>
                   </summary>
                   <div class="video-faq__row-answer rte">{{ block.settings.answer }}</div>
