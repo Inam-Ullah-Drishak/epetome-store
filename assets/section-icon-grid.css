@@ -40,7 +40,7 @@
    edge are clipped by the container, so the grid needs no per-cell edge cases. */
 .icon-grid__tile {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem;
   align-items: center;
   background-color: var(--ig-tile-bg);
   padding: 1.6rem;
@@ -71,10 +71,6 @@
   .icon-grid__inner {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 6.4rem;
-  }
-
-  .icon-grid__tile {
-    padding: 2rem;
   }
 
   .icon-grid__tile-label {
