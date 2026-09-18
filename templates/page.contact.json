@@ -17,19 +17,95 @@
         "padding_bottom": 36
       }
     },
+    "rich_text_8WMa3B": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Ly3dtj": {
+          "type": "heading",
+          "settings": {
+            "heading": "frequently asked questions",
+            "heading_size": "h1"
+          }
+        },
+        "text_icHiWx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you have a question about our product, you may find what you are looking for in our interactive FAQs.</p>"
+          }
+        },
+        "button_qtJ33m": {
+          "type": "button",
+          "settings": {
+            "button_label": "EXPLORE FAQS",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ly3dtj",
+        "text_icHiWx",
+        "button_qtJ33m"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "rich_text_7BDabP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AmWtyi": {
+          "type": "heading",
+          "settings": {
+            "heading": "can’t find the answer?",
+            "heading_size": "h1"
+          }
+        },
+        "text_mQYjTK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Customer Support Team are here to help you. We are available to answer your queries between Monday - Friday 8am to 4pm. Simply complete the form or email<strong>support@epetome.com</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AmWtyi",
+        "text_mQYjTK"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
     "form": {
       "type": "contact-form",
       "settings": {
         "heading": "",
         "heading_size": "h1",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
+        "padding_top": 32,
         "padding_bottom": 36
       }
     }
   },
   "order": [
     "main",
+    "rich_text_8WMa3B",
+    "rich_text_7BDabP",
     "form"
   ]
 }
