@@ -160,14 +160,14 @@
         "heading_BmBA6k": {
           "type": "heading",
           "settings": {
-            "heading": "developed bya nutritionist.",
+            "heading": "helping you to look after your gut.",
             "heading_size": "h2"
           }
         },
         "text_eVTYqw": {
           "type": "text",
           "settings": {
-            "text": "<p>Emily English is a BSC qualified nutritionist. Her understanding of digestive wellness has helped thousands of people who want a better relationship with their gut. It is Emily’s mission to demystify complex health concepts, promoting a vision of health that is simple, liberating and joyful.</p>",
+            "text": "<p>Our capsule takes intricate health science and transforms it into one simple daily ritual, making optimal gut health an accessible goal for everyone.</p>",
             "text_style": "body"
           }
         },
@@ -188,12 +188,12 @@
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/5f772c0df662cd3f241328d89bd7ee6a.jpg",
-        "height": "small",
+        "height": "medium",
         "desktop_image_width": "medium",
         "layout": "image_first",
         "image_behavior": "none",
         "content_layout": "no-overlap",
-        "desktop_content_position": "top",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
         "section_color_scheme": "scheme-1",
