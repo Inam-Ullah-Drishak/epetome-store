@@ -1,0 +1,243 @@
+{{ 'section-icon-grid.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #IconGrid-{{ section.id }} {
+    --ig-columns: {{ section.settings.columns_mobile }};
+    --ig-tile-bg: {{ section.settings.tile_bg }};
+    --ig-tile-border: {{ section.settings.tile_border }};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #IconGrid-{{ section.id }} {
+      --ig-columns: {{ section.settings.columns }};
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div
+    id="IconGrid-{{ section.id }}"
+    class="icon-grid page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    <div class="icon-grid__inner">
+      <div class="icon-grid__content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="icon-grid__heading inline-richtext {{ section.settings.heading_size }}">
+            {{- section.settings.heading -}}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="icon-grid__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a
+            {% if section.settings.button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link }}"
+            {% endif %}
+            class="icon-grid__button button{% if section.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+          >
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="icon-grid__list" role="list">
+          {%- for block in section.blocks -%}
+            <li class="icon-grid__tile" {{ block.shopify_attributes }}>
+              <span class="icon-grid__icon">
+                {%- if block.settings.image != blank -%}
+                  {{
+                    block.settings.image
+                    | image_url: width: 160
+                    | image_tag: loading: 'lazy', widths: '40, 80, 120, 160', alt: ''
+                  }}
+                {%- else -%}
+                  {%- render 'icon-grid-glyph', name: block.settings.icon -%}
+                {%- endif -%}
+              </span>
+              <span class="icon-grid__tile-label">{{ block.settings.label | escape }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon grid",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The importance of a healthy gut microbiome."
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Our gut bacteria play an incredibly complex and critical role in helping us thrive. The microbiome affects everything from digestion to the immune system, hormones, skin health and even mental wellbeing.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Learn more"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary",
+      "label": "Use outline button style",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Columns (desktop)",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Columns (mobile)",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "tile_bg",
+      "label": "Tile background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tile_border",
+      "label": "Tile border",
+      "default": "#e3e0d8"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "Tile",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "mind"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Ignored when a custom image is uploaded.",
+          "options": [
+            { "value": "mind", "label": "Mind" },
+            { "value": "skin", "label": "Skin" },
+            { "value": "immunity", "label": "Immunity" },
+            { "value": "digestion", "label": "Digestion" },
+            { "value": "hormones", "label": "Hormones" },
+            { "value": "leaf", "label": "Leaf" }
+          ],
+          "default": "leaf"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom icon",
+          "info": "Overrides the icon above."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon grid",
+      "blocks": [
+        { "type": "tile", "settings": { "label": "mind", "icon": "mind" } },
+        { "type": "tile", "settings": { "label": "skin", "icon": "skin" } },
+        { "type": "tile", "settings": { "label": "immunity", "icon": "immunity" } },
+        { "type": "tile", "settings": { "label": "digestion", "icon": "digestion" } },
+        { "type": "tile", "settings": { "label": "hormones", "icon": "hormones" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

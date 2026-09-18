@@ -6,8 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */
-{
+ */{
   "sections": {
     "video_banner_rhkUth": {
       "type": "video-banner",
@@ -423,6 +422,382 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
+    },
+    "comparison_table": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "potency.",
+            "caption": "CFU by billions",
+            "column_1_type": "text",
+            "column_1_value": "50",
+            "column_2_type": "text",
+            "column_2_value": "10",
+            "column_3_type": "text",
+            "column_3_value": "10-20"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "synbiotic dual cap technology.",
+            "column_1_type": "yes",
+            "column_2_type": "no",
+            "column_3_type": "no"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "diversity.",
+            "caption": "number of bacteria strains",
+            "column_1_type": "text",
+            "column_1_value": "11",
+            "column_2_type": "text",
+            "column_2_value": "4",
+            "column_3_type": "text",
+            "column_3_value": "7-14"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "prebiotic included.",
+            "column_1_type": "yes",
+            "column_2_type": "no",
+            "column_3_type": "no"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "label": "vitamins & minerals included.",
+            "column_1_type": "yes",
+            "column_2_type": "no",
+            "column_3_type": "no"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "label": "convenient storage.",
+            "column_1_type": "text",
+            "column_1_value": "yes",
+            "column_1_caption": "cupboard",
+            "column_2_type": "text",
+            "column_2_value": "no",
+            "column_2_caption": "refrigerated",
+            "column_3_type": "text",
+            "column_3_value": "yes",
+            "column_3_caption": "cupboard"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "label": "convenient consumption.",
+            "column_1_type": "text",
+            "column_1_value": "yes",
+            "column_1_caption": "1 a day",
+            "column_2_type": "text",
+            "column_2_value": "yes",
+            "column_2_caption": "10ml a day",
+            "column_3_type": "text",
+            "column_3_value": "no",
+            "column_3_caption": "3+ per day"
+          }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": {
+            "label": "price per serving.",
+            "caption": "starting from prices",
+            "column_1_type": "text",
+            "column_1_value": "£1.30",
+            "column_2_type": "text",
+            "column_2_value": "£1.43",
+            "column_3_type": "text",
+            "column_3_value": "£1.33"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8"
+      ],
+      "settings": {
+        "heading": "what sets epetōme apart?",
+        "heading_size": "h1",
+        "subheading": "pre + pro + synbiotic dual cap.",
+        "column_count": 3,
+        "column_1_heading": "epetōme.",
+        "column_2_heading": "non-encapsulated",
+        "column_3_heading": "standard capsules",
+        "highlight_column": 1,
+        "footnote": "<p>Epetōme looks different, and for good reason. Just one potent daily dose of biotics with advanced synbiotic dual cap technology, to ensure each ingredient is delivered with precision - to the right place, at the right time.</p>",
+        "color_scheme": "scheme-2",
+        "highlight_bg": "#1f4d3a",
+        "highlight_text": "#ffffff",
+        "row_bg": "#ffffff",
+        "border_color": "#e3e0d8",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "icon_grid": {
+      "type": "icon-grid",
+      "blocks": {
+        "tile_mind": {
+          "type": "tile",
+          "settings": {
+            "label": "mind",
+            "icon": "mind"
+          }
+        },
+        "tile_skin": {
+          "type": "tile",
+          "settings": {
+            "label": "skin",
+            "icon": "skin"
+          }
+        },
+        "tile_immunity": {
+          "type": "tile",
+          "settings": {
+            "label": "immunity",
+            "icon": "immunity"
+          }
+        },
+        "tile_digestion": {
+          "type": "tile",
+          "settings": {
+            "label": "digestion",
+            "icon": "digestion"
+          }
+        },
+        "tile_hormones": {
+          "type": "tile",
+          "settings": {
+            "label": "hormones",
+            "icon": "hormones"
+          }
+        }
+      },
+      "block_order": [
+        "tile_mind",
+        "tile_skin",
+        "tile_immunity",
+        "tile_digestion",
+        "tile_hormones"
+      ],
+      "settings": {
+        "heading": "The importance of a healthy gut microbiome.",
+        "heading_size": "h2",
+        "text": "<p>Our gut bacteria play an incredibly complex and critical role in helping us thrive. The microbiome affects everything from digestion to the immune system, hormones, skin health and even mental wellbeing.</p>",
+        "button_label": "Learn more",
+        "button_link": "",
+        "button_style_secondary": true,
+        "columns": 2,
+        "columns_mobile": 2,
+        "color_scheme": "scheme-1",
+        "tile_bg": "#ffffff",
+        "tile_border": "#e3e0d8",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "video_faq": {
+      "type": "video-faq",
+      "blocks": {
+        "video_1": {
+          "type": "video",
+          "settings": {
+            "question": "What exactly is your microbiome and why is it important?",
+            "transcript": ""
+          }
+        },
+        "video_2": {
+          "type": "video",
+          "settings": {
+            "question": "I have heard ’prebiotic’ and ’probiotic’ foods are good for my gut. Is this true and what does this mean?",
+            "transcript": ""
+          }
+        },
+        "video_3": {
+          "type": "video",
+          "settings": {
+            "question": "When is it appropriate to take a supplement for gut health?",
+            "transcript": ""
+          }
+        },
+        "video_4": {
+          "type": "video",
+          "settings": {
+            "question": "What is Epetōme’s synbiotic dual cap?",
+            "transcript": ""
+          }
+        },
+        "video_5": {
+          "type": "video",
+          "settings": {
+            "question": "What is unique about this capsule?",
+            "transcript": ""
+          }
+        },
+        "video_6": {
+          "type": "video",
+          "settings": {
+            "question": "What can I expect from taking the synbiotic dual cap?",
+            "transcript": ""
+          }
+        },
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the synbiotic dual cap a probiotic?",
+            "answer": ""
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "How long do I need to take the synbiotic dual cap for?",
+            "answer": ""
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I take other supplements alongside this for my gut or is Epetōme enough?",
+            "answer": ""
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the active ingredients in the synbiotic dual cap?",
+            "answer": ""
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Are there any side effects from taking the synbiotic dual cap?",
+            "answer": ""
+          }
+        },
+        "faq_6": {
+          "type": "faq",
+          "settings": {
+            "question": "Other than my gut, will I find any other benefits to taking Epetōme?",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_1",
+        "video_2",
+        "video_3",
+        "video_4",
+        "video_5",
+        "video_6",
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5",
+        "faq_6"
+      ],
+      "settings": {
+        "heading": "emily answers your questions about epetōme:",
+        "heading_size": "h2",
+        "text": "<p>The world of supplements and gut health can be confusing. So below I have answered some of your most asked questions.</p>",
+        "transcript_label": "View Transcript",
+        "columns": 3,
+        "columns_mobile": 1,
+        "button_label": "All answers",
+        "button_link": "",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1",
+        "card_bg": "#ffffff",
+        "border_color": "#e3e0d8",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "community_feed": {
+      "type": "community-feed",
+      "blocks": {
+        "image_1": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "alt": ""
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "alt": ""
+          }
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "alt": ""
+          }
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "alt": ""
+          }
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {
+            "image": "",
+            "link": "",
+            "alt": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "heading": "join our community.",
+        "heading_size": "h2",
+        "handle": "@epetome_co",
+        "handle_link": "",
+        "columns": 5,
+        "columns_mobile": 2,
+        "gap": 8,
+        "image_radius": 0,
+        "full_width": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
@@ -430,8 +805,12 @@
     "press_marquee",
     "product_spotlight",
     "image_with_text_Nm6KbC",
+    "tech_showcase",
+    "comparison_table",
     "image_banner_rhMiqG",
     "image_banner_UacLXQ",
-    "tech_showcase"
+    "icon_grid",
+    "video_faq",
+    "community_feed"
   ]
 }

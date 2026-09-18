@@ -1,0 +1,366 @@
+{{ 'section-comparison-table.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #ComparisonTable-{{ section.id }} {
+    --ct-highlight-bg: {{ section.settings.highlight_bg }};
+    --ct-highlight-text: {{ section.settings.highlight_text }};
+    --ct-row-bg: {{ section.settings.row_bg }};
+    --ct-border: {{ section.settings.border_color }};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #ComparisonTable-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign columns = section.settings.column_count | default: 3
+  assign highlight = section.settings.highlight_column | default: 1
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div
+    id="ComparisonTable-{{ section.id }}"
+    class="comparison-table page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="comparison-table__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="comparison-table__heading inline-richtext {{ section.settings.heading_size }}">
+            {{- section.settings.heading -}}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <p class="comparison-table__subheading">{{ section.settings.subheading | escape }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="comparison-table__scroller">
+      <table class="comparison-table__table">
+        <caption class="visually-hidden">{{ section.settings.heading | strip_html | escape }}</caption>
+        <thead>
+          <tr>
+            <th scope="col"><span class="visually-hidden">Feature</span></th>
+            {%- for i in (1..columns) -%}
+              {%- liquid
+                case i
+                  when 1
+                    assign col_heading = section.settings.column_1_heading
+                  when 2
+                    assign col_heading = section.settings.column_2_heading
+                  else
+                    assign col_heading = section.settings.column_3_heading
+                endcase
+              -%}
+              <th
+                scope="col"
+                class="comparison-table__col-head{% if i == highlight %} comparison-table__col--highlight{% endif %}"
+              >
+                {{- col_heading | escape -}}
+              </th>
+            {%- endfor -%}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr class="comparison-table__row" {{ block.shopify_attributes }}>
+              <th scope="row" class="comparison-table__label">
+                <span class="comparison-table__label-text">{{ block.settings.label | escape }}</span>
+                {%- if block.settings.caption != blank -%}
+                  <span class="comparison-table__label-caption">{{ block.settings.caption | escape }}</span>
+                {%- endif -%}
+              </th>
+
+              {%- for i in (1..columns) -%}
+                {%- liquid
+                  case i
+                    when 1
+                      assign cell_type = block.settings.column_1_type
+                      assign cell_value = block.settings.column_1_value
+                      assign cell_caption = block.settings.column_1_caption
+                    when 2
+                      assign cell_type = block.settings.column_2_type
+                      assign cell_value = block.settings.column_2_value
+                      assign cell_caption = block.settings.column_2_caption
+                    else
+                      assign cell_type = block.settings.column_3_type
+                      assign cell_value = block.settings.column_3_value
+                      assign cell_caption = block.settings.column_3_caption
+                  endcase
+                -%}
+                <td class="comparison-table__cell{% if i == highlight %} comparison-table__col--highlight{% endif %}">
+                  {%- case cell_type -%}
+                    {%- when 'yes' -%}
+                      <span class="comparison-table__icon comparison-table__icon--yes" role="img" aria-label="Included">
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                          <circle cx="10" cy="10" r="9" fill="currentColor" />
+                          <path d="M5.8 10.2 8.6 13l5.6-6" stroke="var(--ct-check-mark, #ffffff)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                    {%- when 'no' -%}
+                      <span class="comparison-table__icon comparison-table__icon--no" role="img" aria-label="Not included">
+                        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+                          <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.2" />
+                          <path d="M6.2 10h7.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                        </svg>
+                      </span>
+                    {%- else -%}
+                      {%- if cell_value != blank -%}
+                        <span class="comparison-table__value">{{ cell_value | escape }}</span>
+                      {%- endif -%}
+                  {%- endcase -%}
+
+                  {%- if cell_caption != blank -%}
+                    <span class="comparison-table__cell-caption">{{ cell_caption | escape }}</span>
+                  {%- endif -%}
+                </td>
+              {%- endfor -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.footnote != blank -%}
+      <div class="comparison-table__footnote rte">{{ section.settings.footnote }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Comparison table",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "what sets epetōme apart?"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "pre + pro + synbiotic dual cap."
+    },
+    {
+      "type": "header",
+      "content": "Columns"
+    },
+    {
+      "type": "range",
+      "id": "column_count",
+      "min": 2,
+      "max": 3,
+      "step": 1,
+      "label": "Number of comparison columns",
+      "default": 3
+    },
+    {
+      "type": "text",
+      "id": "column_1_heading",
+      "label": "Column 1 heading",
+      "default": "epetōme."
+    },
+    {
+      "type": "text",
+      "id": "column_2_heading",
+      "label": "Column 2 heading",
+      "default": "non-encapsulated"
+    },
+    {
+      "type": "text",
+      "id": "column_3_heading",
+      "label": "Column 3 heading",
+      "default": "standard capsules"
+    },
+    {
+      "type": "range",
+      "id": "highlight_column",
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "label": "Highlighted column",
+      "info": "0 highlights none.",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Footnote"
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Text below table",
+      "default": "<p>Epetōme looks different, and for good reason. Just one potent daily dose of biotics with advanced synbiotic dual cap technology, to ensure each ingredient is delivered with precision - to the right place, at the right time.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "highlight_bg",
+      "label": "Highlighted column background",
+      "default": "#1f4d3a"
+    },
+    {
+      "type": "color",
+      "id": "highlight_text",
+      "label": "Highlighted column text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "row_bg",
+      "label": "Table background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Row divider",
+      "default": "#e3e0d8"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Row label",
+          "default": "potency."
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Row caption",
+          "info": "Small text under the label."
+        },
+        {
+          "type": "header",
+          "content": "Column 1"
+        },
+        {
+          "type": "select",
+          "id": "column_1_type",
+          "label": "Cell type",
+          "options": [
+            { "value": "text", "label": "Text" },
+            { "value": "yes", "label": "Tick" },
+            { "value": "no", "label": "Dash" }
+          ],
+          "default": "text"
+        },
+        { "type": "text", "id": "column_1_value", "label": "Value", "info": "Used when the cell type is Text." },
+        { "type": "text", "id": "column_1_caption", "label": "Caption" },
+        {
+          "type": "header",
+          "content": "Column 2"
+        },
+        {
+          "type": "select",
+          "id": "column_2_type",
+          "label": "Cell type",
+          "options": [
+            { "value": "text", "label": "Text" },
+            { "value": "yes", "label": "Tick" },
+            { "value": "no", "label": "Dash" }
+          ],
+          "default": "text"
+        },
+        { "type": "text", "id": "column_2_value", "label": "Value", "info": "Used when the cell type is Text." },
+        { "type": "text", "id": "column_2_caption", "label": "Caption" },
+        {
+          "type": "header",
+          "content": "Column 3"
+        },
+        {
+          "type": "select",
+          "id": "column_3_type",
+          "label": "Cell type",
+          "options": [
+            { "value": "text", "label": "Text" },
+            { "value": "yes", "label": "Tick" },
+            { "value": "no", "label": "Dash" }
+          ],
+          "default": "text"
+        },
+        { "type": "text", "id": "column_3_value", "label": "Value", "info": "Used when the cell type is Text." },
+        { "type": "text", "id": "column_3_caption", "label": "Caption" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison table",
+      "blocks": [
+        { "type": "row", "settings": { "label": "potency.", "caption": "CFU by billions", "column_1_type": "text", "column_1_value": "50", "column_2_type": "text", "column_2_value": "10", "column_3_type": "text", "column_3_value": "10-20" } },
+        { "type": "row", "settings": { "label": "synbiotic dual cap technology.", "column_1_type": "yes", "column_2_type": "no", "column_3_type": "no" } },
+        { "type": "row", "settings": { "label": "diversity.", "caption": "number of bacteria strains", "column_1_type": "text", "column_1_value": "11", "column_2_type": "text", "column_2_value": "4", "column_3_type": "text", "column_3_value": "7-14" } },
+        { "type": "row", "settings": { "label": "prebiotic included.", "column_1_type": "yes", "column_2_type": "no", "column_3_type": "no" } },
+        { "type": "row", "settings": { "label": "vitamins & minerals included.", "column_1_type": "yes", "column_2_type": "no", "column_3_type": "no" } },
+        { "type": "row", "settings": { "label": "convenient storage.", "column_1_type": "text", "column_1_value": "yes", "column_1_caption": "cupboard", "column_2_type": "text", "column_2_value": "no", "column_2_caption": "refrigerated", "column_3_type": "text", "column_3_value": "yes", "column_3_caption": "cupboard" } },
+        { "type": "row", "settings": { "label": "convenient consumption.", "column_1_type": "text", "column_1_value": "yes", "column_1_caption": "1 a day", "column_2_type": "text", "column_2_value": "yes", "column_2_caption": "10ml a day", "column_3_type": "text", "column_3_value": "no", "column_3_caption": "3+ per day" } },
+        { "type": "row", "settings": { "label": "price per serving.", "caption": "starting from prices", "column_1_type": "text", "column_1_value": "£1.30", "column_2_type": "text", "column_2_value": "£1.43", "column_3_type": "text", "column_3_value": "£1.33" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

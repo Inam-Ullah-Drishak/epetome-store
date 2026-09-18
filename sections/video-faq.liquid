@@ -1,0 +1,359 @@
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+{{ 'section-video-faq.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #VideoFaq-{{ section.id }} {
+    --vf-columns: {{ section.settings.columns_mobile }};
+    --vf-card-bg: {{ section.settings.card_bg }};
+    --vf-border: {{ section.settings.border_color }};
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    #VideoFaq-{{ section.id }} {
+      --vf-columns: {{ section.settings.columns }};
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div
+    id="VideoFaq-{{ section.id }}"
+    class="video-faq page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+  >
+    <div class="video-faq__top">
+      <div class="video-faq__intro">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="video-faq__heading inline-richtext {{ section.settings.heading_size }}">
+            {{- section.settings.heading -}}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="video-faq__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+      </div>
+
+      {%- assign video_blocks = section.blocks | where: 'type', 'video' -%}
+      {%- if video_blocks.size > 0 -%}
+        <ul class="video-faq__grid" role="list">
+          {%- for block in video_blocks -%}
+            {%- liquid
+              assign video_id = block.settings.video.id | default: block.settings.video_url.id | default: block.id
+              assign poster = block.settings.cover_image | default: block.settings.video.preview_image
+              assign label = block.settings.question | escape
+            -%}
+            <li class="video-faq__item" {{ block.shopify_attributes }}>
+              <deferred-media
+                class="video-faq__media deferred-media gradient global-media-settings"
+                data-media-id="{{ video_id }}"
+              >
+                <button
+                  id="VideoFaq-Poster-{{ block.id }}"
+                  class="video-faq__poster deferred-media__poster media"
+                  type="button"
+                  aria-label="{{ label }}"
+                >
+                  {%- if poster != blank -%}
+                    {{
+                      poster
+                      | image_url: width: 1200
+                      | image_tag: loading: 'lazy', widths: '300, 500, 750, 1000, 1200', sizes: '(min-width: 990px) 25vw, 45vw', alt: label
+                    }}
+                  {%- else -%}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                  {%- endif -%}
+                  <span class="deferred-media__poster-button motion-reduce">
+                    <span class="svg-wrapper">
+                      {{- 'icon-play.svg' | inline_asset_content -}}
+                    </span>
+                  </span>
+                </button>
+                <template>
+                  {%- if block.settings.video == null and block.settings.video_url != null -%}
+                    {%- if block.settings.video_url.type == 'youtube' -%}
+                      <iframe
+                        src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1"
+                        class="js-youtube"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        title="{{ label }}"
+                      ></iframe>
+                    {%- else -%}
+                      <iframe
+                        src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1"
+                        class="js-vimeo"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        title="{{ label }}"
+                      ></iframe>
+                    {%- endif -%}
+                  {%- else -%}
+                    {{ block.settings.video | video_tag: image_size: '1100x', autoplay: true, controls: true, muted: false }}
+                  {%- endif -%}
+                </template>
+              </deferred-media>
+
+              {%- if block.settings.question != blank -%}
+                <p class="video-faq__question">{{ block.settings.question | escape }}</p>
+              {%- endif -%}
+
+              {%- if block.settings.transcript != blank -%}
+                <details class="video-faq__transcript">
+                  <summary class="video-faq__transcript-toggle">
+                    <span>{{ section.settings.transcript_label | escape }}</span>
+                  </summary>
+                  <div class="video-faq__transcript-body rte">{{ block.settings.transcript }}</div>
+                </details>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    {%- assign faq_blocks = section.blocks | where: 'type', 'faq' -%}
+    {%- if faq_blocks.size > 0 -%}
+      <ul class="video-faq__accordion" role="list">
+        {%- for block in faq_blocks -%}
+          <li {{ block.shopify_attributes }}>
+            <details class="video-faq__row">
+              <summary class="video-faq__row-toggle">
+                <span class="video-faq__row-question">{{ block.settings.question | escape }}</span>
+                <span class="video-faq__row-icon svg-wrapper">
+                  {{- 'icon-caret.svg' | inline_asset_content -}}
+                </span>
+              </summary>
+              <div class="video-faq__row-answer rte">{{ block.settings.answer }}</div>
+            </details>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="video-faq__buttons">
+        <a
+          {% if section.settings.button_link == blank %}
+            role="link" aria-disabled="true"
+          {% else %}
+            href="{{ section.settings.button_link }}"
+          {% endif %}
+          class="button{% if section.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video FAQ",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "emily answers your questions about epetōme:"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>The world of supplements and gut health can be confusing. So below I have answered some of your most asked questions.</p>"
+    },
+    {
+      "type": "text",
+      "id": "transcript_label",
+      "label": "Transcript toggle label",
+      "default": "View Transcript"
+    },
+    {
+      "type": "header",
+      "content": "Video grid"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Columns (desktop)",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Columns (mobile)",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "All answers"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary",
+      "label": "Use outline button style",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Divider and border",
+      "default": "#e3e0d8"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What exactly is your microbiome and why is it important?"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "Hosted by Shopify. Takes priority over the video URL below."
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "accept": ["youtube", "vimeo"],
+          "label": "Video URL",
+          "info": "Used when no hosted video is selected."
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover image",
+          "info": "Falls back to the hosted video's own poster frame."
+        },
+        {
+          "type": "richtext",
+          "id": "transcript",
+          "label": "Transcript",
+          "info": "The toggle is hidden when this is empty."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ row",
+      "limit": 20,
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Is the synbiotic dual cap a probiotic?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video FAQ",
+      "blocks": [
+        { "type": "video", "settings": { "question": "What exactly is your microbiome and why is it important?" } },
+        { "type": "video", "settings": { "question": "I have heard 'prebiotic' and 'probiotic' foods are good for my gut. Is this true and what does this mean?" } },
+        { "type": "video", "settings": { "question": "When is it appropriate to take a supplement for gut health?" } },
+        { "type": "video", "settings": { "question": "What is Epetōme's synbiotic dual cap?" } },
+        { "type": "video", "settings": { "question": "What is unique about this capsule?" } },
+        { "type": "video", "settings": { "question": "What can I expect from taking the synbiotic dual cap?" } },
+        { "type": "faq", "settings": { "question": "Is the synbiotic dual cap a probiotic?" } },
+        { "type": "faq", "settings": { "question": "How long do I need to take the synbiotic dual cap for?" } },
+        { "type": "faq", "settings": { "question": "Can I take other supplements alongside this for my gut or is Epetōme enough?" } },
+        { "type": "faq", "settings": { "question": "What are the active ingredients in the synbiotic dual cap?" } },
+        { "type": "faq", "settings": { "question": "Are there any side effects from taking the synbiotic dual cap?" } },
+        { "type": "faq", "settings": { "question": "Other than my gut, will I find any other benefits to taking Epetōme?" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
