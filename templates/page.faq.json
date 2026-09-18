@@ -129,11 +129,92 @@
         "padding_top": 50,
         "padding_bottom": 50
       }
+    },
+    "video_faq_b4WRhB": {
+      "type": "video-faq",
+      "blocks": {
+        "video_NTb97p": {
+          "type": "video",
+          "settings": {
+            "question": "What exactly is Epetōme’s synbiotic dual cap?",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "faq_QVLUfp": {
+          "type": "faq",
+          "settings": {
+            "question": "Is the synbiotic dual cap a probiotic?",
+            "answer": "<p>The capsule contains live bacteria, therefore it can be considered a probiotic. It also contains fructooligosaccharides (FOS) which can be considered prebiotics. However, we refrain from using such terms as UK Law prevents this, seeing our products as food supplements to which no health claims can be associated.</p>"
+          }
+        },
+        "faq_WXqiXb": {
+          "type": "faq",
+          "settings": {
+            "question": "Is there consumer testing/research which has been completed on these supplements and if so, what are the results?",
+            "answer": "<p>The synbiotic dual cap technology has been tested using SHIME®, or Simulator of the Human Intestinal Microbial Ecosystem, a sophisticated in vitro technology that simulates the human gastrointestinal tract. There are also hundreds of independent studies on the ingredients within our product. Head to our Lab and Research Library pages to learn more about the testing and studies behind our products.</p>"
+          }
+        },
+        "faq_9ackMG": {
+          "type": "faq",
+          "settings": {
+            "question": "What is SHIME testing and why is it important?",
+            "answer": "<p>SHIME® testing, or Simulator of the Human Intestinal Microbial Ecosystem, is a sophisticated in vitro technology that simulates the human gastrointestinal tract to study the impact of substances like our <strong>synbiotic dual cap.</strong> on the microbiome. </p><p>For Epetōme, utilising SHIME® testing to validate the efficacy of the duo capunderscores a commitment to scientific excellence and consumer benefit. SHIME® testing demonstrates the survivability and targeted delivery of our capsule through the harsh conditions of the stomach to reach the intestines, where these components can add to the diversity and complement the gut microbiome.</p>"
+          }
+        },
+        "faq_DC6VVc": {
+          "type": "faq",
+          "settings": {
+            "question": "Why choose Epetōme compared to other gut supplements on the market?",
+            "answer": "<p>1) Potency:</p><p>We have sourced our ingredients from the best manufacturers in the industry, ensuring a potent dosage of 50 billion live bacteria (one of the highest colony-forming units, or CFU counts on the market). There are also 11 unique strains of bacteria (making the synbiotic dual cap one of the most diverse bacterial supplements), each selected by a qualified nutritionist for the scientific and mechanistic research behind them.</p><p>2) Our technology:</p><p>Many supplements boast high CFU counts but struggle to survive from manufacture to shelf and, more importantly, through your digestive system to your gut. That's where our synbiotic dual cap. makes a difference. The synbiotic dual cap technology ensures that the beneficial bacteria are alive during manufacture and remain viable up to the expiration date. This is vital for ensuring all 50 billion bacterial strains reach your gut alive.  Our capsule is engineered to protect these delicate bacteria from stomach acid, providing targeted delivery to the gut.</p><p>3) Convenience:</p><p>And finally, we have understood that convenience is crucial. No gimmicks, no refrigeration needed, no blending. Just one capsule, once a day, every day. Making it easy to embed Epetōme into your morning routine.</p>"
+          }
+        },
+        "video_GDzYyg": {
+          "type": "video",
+          "settings": {
+            "question": "What is unique about this capsule?",
+            "transcript": "<p>View Transcript</p>"
+          }
+        },
+        "video_aYhx3n": {
+          "type": "video",
+          "settings": {
+            "question": "What can I expect from taking the synbiotic dual cap?",
+            "transcript": "<p>View Transcript</p>"
+          }
+        }
+      },
+      "block_order": [
+        "video_NTb97p",
+        "faq_QVLUfp",
+        "faq_WXqiXb",
+        "faq_9ackMG",
+        "faq_DC6VVc",
+        "video_GDzYyg",
+        "video_aYhx3n"
+      ],
+      "name": "Video FAQ",
+      "settings": {
+        "heading": "the synbiotic dual cap.",
+        "heading_size": "h2",
+        "text": "",
+        "transcript_label": "View Transcript",
+        "columns": 3,
+        "columns_mobile": 1,
+        "button_label": "",
+        "button_link": "",
+        "button_style_secondary": true,
+        "color_scheme": "scheme-1",
+        "card_bg": "#ffffff",
+        "border_color": "#e3e0d8",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
     }
   },
   "order": [
     "main",
     "video_faq_VAYeMB",
-    "video_faq_jb7RfP"
+    "video_faq_jb7RfP",
+    "video_faq_b4WRhB"
   ]
 }
