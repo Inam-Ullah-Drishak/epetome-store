@@ -19,7 +19,7 @@
 .video-faq__grid {
   display: grid;
   grid-template-columns: repeat(var(--vf-columns), minmax(0, 1fr));
-  gap: 1.6rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -170,11 +170,6 @@
     gap: 4.8rem;
     align-items: start;
   }
-
-  .video-faq__grid {
-    gap: 2rem;
-  }
-
   .video-faq__question {
     font-size: 1.4rem;
   }
