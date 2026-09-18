@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "video_banner_rhkUth": {
       "type": "video-banner",
@@ -592,35 +593,40 @@
           "type": "tile",
           "settings": {
             "label": "mind",
-            "icon": "mind"
+            "icon": "mind",
+            "image": "shopify://shop_images/Frame_1093_70x_216e18cf-5aff-47bf-8766-65cab550e2a9.png"
           }
         },
         "tile_fztept": {
           "type": "tile",
           "settings": {
             "label": "skin",
-            "icon": "skin"
+            "icon": "skin",
+            "image": "shopify://shop_images/Group_70x_7abc6cf0-6b60-4baa-aae6-83ab1bc030ba.png"
           }
         },
         "tile_PANegQ": {
           "type": "tile",
           "settings": {
             "label": "immunity",
-            "icon": "immunity"
+            "icon": "immunity",
+            "image": "shopify://shop_images/Frame_1093_1_70x_34c48933-a3e4-47bc-a516-79364a112b69.png"
           }
         },
         "tile_JECkNq": {
           "type": "tile",
           "settings": {
             "label": "digestion",
-            "icon": "digestion"
+            "icon": "digestion",
+            "image": "shopify://shop_images/Frame_1093_2_70x_843973e2-60d3-45aa-bd87-50165c49fbf4.png"
           }
         },
         "tile_GRmB7J": {
           "type": "tile",
           "settings": {
             "label": "hormones",
-            "icon": "hormones"
+            "icon": "hormones",
+            "image": "shopify://shop_images/Frame_1093_3_70x_006f74bb-fada-4313-95d5-5a9555d74f9f.png"
           }
         }
       },
